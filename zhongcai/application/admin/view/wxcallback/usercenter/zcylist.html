@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>指定仲裁员</title>
+    <style>
+        .quit_btn1{
+
+            border:1px solid green;
+            border-radius:5px;
+            color: #000000;
+            font-size: 15px;
+            padding:0 10px;
+            display: block;
+            text-align: center;
+            line-height:38px;
+            margin:8px auto 4px;
+
+            /*background-color: #edc800; border: 1px solid #e0bc00; border-radius: 5px; color: #000000; font-size: 16px; line-height: 20px;  margin: 15% 20%;  display: block; text-align: center*/
+
+        }
+
+        .imgr{
+            float: right;
+            width: 20%;
+            text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" href="__CDN__/assets/css/wechat/mall.css" type="text/css" />
+</head>
+<body>
+<div class="mall_main">
+<div id="child_header">
+    <div class="goback"><a href="http://zcw.wszx.cc/admin/wechat/myinfo/daohang?did={$did}&idid={$idid}"><i></i></a></div>
+    <div class="current_location"><span>指定仲裁员</span></div>
+</div>
+    {foreach name="zcyList" item="vo"}
+        <div class="address_list clearfix">
+            <div class="list_left clearfix">
+                <div class="pw2">
+                    <p ><b>仲裁员姓名:{$vo.name}</b></p>
+                    <p >仲裁案件数量:{$vo.total}</p>
+                    <p>已完成案件数量:{$vo.finish_num}</p>
+                    <p>地址:{$vo.province_name}{$vo.city_name}{$vo.district_name}</p>
+                </div>
+                {if $vo.show}
+                <div class="imgr"><img style="display: block; width:80%; " src="{$vo.show}" alt="头像"><button  href="javascript:void(0);" style="text-align: center ; color: green" class="quit_btn1"  onclick="return zhiding('{$vo.zd_url}')">指定</button></div>
+                {else}
+                <div class="imgr"><img style=" display: block; width:80%; " src="__CDN__/assets/img/logo_zc.png" alt="头像"><button  href="javascript:void(0);" style="text-align: center ; color: green" class="quit_btn1"  onclick="return zhiding('{$value.url}')">指定</button></div>
+                {/if}
+            </div>
+
+        </div>
+    {/foreach}
+    <span  style="color: green; display:block; line-height: 40px; height: 40px; margin: 0 auto; text-align: center">----以上目前所有的仲裁员信息----</span>
+</div>
+
+<script>
+   function zhiding(url){
+      var tmp =window.confirm('确定要提交吗');
+      if(tmp == true){
+          window.location.href=url;
+      }
+
+    }
+</script>
+</body>
+</html>

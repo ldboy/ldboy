@@ -1,0 +1,40 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+    <input type="hidden" name="row[dossier_id]" value="{$dossier_id}">
+    <input type="hidden" name="row[evidence_id]" value="{$evidence_id}">
+    <input type="hidden" name="row[title]" value="{$title}">
+
+    <h3 style="text-align: center">请认真填写质证资料,不填写默认为：未发表质证意见</h3>
+    <div class="form-group">
+        <label for="c-reality" class="control-label col-xs-12 col-sm-2">真实性:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-reality5af1a7550dfe05209" class="form-control" name="row[reality]"  value="{$row['reality']}">{$row['reality']}</textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-legal" class="control-label col-xs-12 col-sm-2">合法性:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-legal5af1a7550dde98122" class="form-control" name="row[legal]"  value="{$row['legal']}">{$row['legal']}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-relation" class="control-label col-xs-12 col-sm-2">关联性:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-relation5af1a7550df1a638" class="form-control" name="row[relation]"  value="{$row['relation']}">{$row['relation']}</textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-other" class="control-label col-xs-12 col-sm-2">其他:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-other5af1a7550e0a56117" class="form-control" name="row[other]"  value="{$row['other']}">{$row['other']}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed btn-submit-tip"  data-title='提示' data-tip='确定要提交吗，请核实质证信息无误，提交后无法修改。'>{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

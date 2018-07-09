@@ -1,0 +1,54 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="{:url('submitTable')}">
+    <input type="hidden" name="dossier_id" value="{$dossier_id}">
+    <input type="hidden" name="doc_type" value="{$doc_type}">
+    <div class="form-group">
+        <label for="c-name" class="control-label col-xs-12 col-sm-2">答辩人:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-name" data-rule="required" class="form-control" name="Db_user" type="text" value="{$row.Db_user}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-address" class="control-label col-xs-12 col-sm-2">答辩人住所:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-address" data-rule="required" class="form-control" name="Db_address" type="text" value="{$row.Db_address}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-tel" class="control-label col-xs-12 col-sm-2">答辩方法定代表人:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-tel" data-rule="required" class="form-control" name="Db_fddbr" type="text" value="{$row.Db_fddbr}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-name" class="control-label col-xs-12 col-sm-2">被答辩人:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-name1" data-rule="required" class="form-control" name="BDb_user" type="text" value="{$row.BDb_user}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-address" class="control-label col-xs-12 col-sm-2">被答辩人住所:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-address1" data-rule="required" class="form-control" name="BDb_address" type="text" value="{$row.BDb_address}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-tel" class="control-label col-xs-12 col-sm-2">被答辩方法定代表人:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-tel1" data-rule="required" class="form-control" name="BDb_fddbr" type="text" value="{$row.BDb_fddbr}">
+        </div>
+    </div>
+    <!--<div class="form-group">
+        <label for="c-intro" class="control-label col-xs-12 col-sm-2">简介:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-intro" data-rule="required" class="form-control " rows="5" name="row[intro]" cols="50">{$row.intro}</textarea>
+        </div>
+    </div>-->
+
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed">提交</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

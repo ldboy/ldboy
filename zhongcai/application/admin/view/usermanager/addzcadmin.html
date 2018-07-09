@@ -1,0 +1,58 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label for="c-name" class="control-label col-xs-12 col-sm-2">姓名:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-name5afe8f7b1711e7953" data-rule="required" class="form-control" name="row[name]" type="text" value="{$row.name}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-th_id" class="control-label col-xs-12 col-sm-2">仲裁id:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-th_id5afe8f7b172db609" data-rule="required" class="form-control" name="row[th_id]" type="text" value="{$row.th_id}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-role" class="control-label col-xs-12 col-sm-2">角色:</label>
+        <div class="col-xs-12 col-sm-8">
+            <?php  $rolelist=  json_decode('{"1":"\u4e3b\u529e","2":"\u7acb\u6848\u5ba1\u6279","3":"\u88c1\u51b3\u5ba1\u6279"}',true);   ?>            
+            <select  id="c-role" data-rule="required" class="form-control selectpicker" name="row[role]">
+                {foreach name="$rolelist" item="vo"}
+                    <option value="{$key}" {in name="key" value="$row.role"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-status" class="control-label col-xs-12 col-sm-2">状态:</label>
+        <div class="col-xs-12 col-sm-8">
+            <?php  $statuslist=  json_decode('["\u672a\u542f\u7528","\u542f\u7528"]',true);   ?>            
+            <select  id="c-status" data-rule="required" class="form-control selectpicker" name="row[status]">
+                {foreach name="$statuslist" item="vo"}
+                    <option value="{$key}" {in name="key" value="$row.status"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-idid" class="control-label col-xs-12 col-sm-2">身份证id:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-idid5afe8f7b176129743" data-rule="required" class="form-control" name="row[idid]" type="text" value="{$row.idid}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-phone" class="control-label col-xs-12 col-sm-2">手机号:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-phone5afe8f7b1771d8900" data-rule="required" class="form-control" name="row[phone]" type="text" value="{$row.phone}">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

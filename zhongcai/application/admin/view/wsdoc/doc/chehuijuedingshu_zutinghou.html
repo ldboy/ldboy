@@ -1,0 +1,50 @@
+<?php
+    $d['defence']['this']['matter'] = nl2br($d['defence']['this']['matter']);
+?>
+<div class="xywrap mt">
+    <section class="zctitle">石 家 庄 仲 裁 委 员 会</section>
+    <section class="zctitle">决 定 书</section>
+    <section class="cjlittle_title">{$d.info.zno_str}</section>
+    <div class="main_info margintop">
+        <p class="kongtwo">申&nbsp;&nbsp;&nbsp;请&nbsp;&nbsp;&nbsp;人：<span>{$d.users.role.1.0.name}</span></p>
+        <p class="kongtwo">住 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所：<span>{$d.users.role.1.0.address}</span></p>
+        <?php if($d['users']['role'][1][0]['type'] == 2){ ?>
+        <p class="kongtwo">法定 代 表人：<span>{$d.users.role.1.0.f_name}</span></p>
+        <?php } ?>
+        <p class="kongtwo">仲裁 代 理人：<span>{$d.users.role.1.0.f_name}</span></p>
+        <?php foreach($d[users][role][2] as $ke=>$value){ ?>
+        <?php if($value['type'] == 2){ ?>
+        <p class="kongtwo">被 &nbsp;申&nbsp;请&nbsp;人：<span><?php echo $value['html_show']; ?></span></p>
+        <p class="kongtwo">住 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所：<span><?php echo $value['address']; ?></span></p>
+        <p class="kongtwo">法定 代 表人：<span><?php echo $value['f_name']; ?></span></p>
+        <?php }else{ ?>
+
+        <p class="kongtwo">被 &nbsp;申&nbsp;请&nbsp;人：<span>{$value.name} {$value.sex} {$value.nation} {$value.birthday}</span></p>
+        <p class="kongtwo">住 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所：<span><?php echo $value['address'] ?></span></p>
+        <!--<p class="kongtwo">身份证号：<span><?php echo $value['id_num'] ?></span></p>-->
+        <?php } ?>
+        <?php } ?>
+    </div>
+    <div class="content con">
+        <p class="kongtwo">石家庄仲裁委员会（以下简称本会）根据申请人（以下简称申请人）与{foreach name="$d.users.role.2" item="vo"}被申请人{$vo.name}（以下简称{if(count($d['users']['role'][2]) != 1)}第{$vo.Num}{/if}被申请人）、 {/foreach}达成的《还款协议》和申请人向本会提交的《仲裁申请书》，于{$d.time.time30}受理了当事人之间因《还款协议》发生的争议仲裁案，案号为{$d.info.zno_str}。（第一被）申请人向本会预交了仲裁费0.00元。根据《中华人民共和国仲裁法》（以下简称《仲裁法》）和《石家庄仲裁委员会仲裁规则》（以下简称《仲裁规则》）的有关规定，本会向被申请人送达了仲裁通知书、仲裁申请书副本及其证据材料、《仲裁规则》、《石家庄仲裁委员会仲裁员名册》（以下简称《仲裁员名册》），同时也将仲裁通知书、《仲裁规则》、《仲裁员名册》送达给申请人。</p>
+        <p class="kongtwo">根据双方当事人的约定及《仲裁规则》的规定，{$d.cjs.zcyInfo.addtime}，由本会主任指定{$d.cjs.zcyInfo.name}为本案独任仲裁员，组成独任仲裁庭审理本案。本会向双方当事人分别送达了组庭通知书和仲裁员声明书。</p>
+        <p class="kongtwo">申请人的仲裁请求为：{$d.uniquevalue.chehuiyuanyin}</p>
+        <p class="kongtwo">{$d.uniquevalue.chehuiTime}，申请人向本会提交了《撤回仲裁请求申请书》，称因{$d.uniquevalue.chehuishishijiliyou}，请求撤回仲裁请求。根据《仲裁规则》第四十八条之规定，本会经研究，决定如下：</p>
+        <p class="kongtwo">{$d.uniquevalue.zcychehuiyijian}申请人撤回仲裁申请。</p>
+        <div class="xeiyibtm1 clearfix">
+            <p class="kongtwo">此致</p>
+            <p>{$d.jigou.info.name}</p>
+        </div>
+        <div class="clearfix"></div>
+        <div class="signbtm">
+            <div class="sign2">仲裁员：<span style="color:#ffffff;margin-left:15px;">{$d.sign.imgs.0}</span></div>
+            <div class="sign3"><span style="color:#ffffff;">{$d.sign.imgs.1}</span></div>
+            <div class="tt">日期：{$d.sign.time.string}</div>
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+
+
+
+
+</div>

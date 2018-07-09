@@ -1,0 +1,81 @@
+{if($proposal)}
+ <div class="box box-header">
+     <div class="btn-lg">修改建议：</div>
+     <div class="btn-lg">{$proposal}</div>
+ </div>
+{/if}
+{volist name="docs" id="item"}
+<div class="box box-default layui-layer-padding">
+
+    <div class="box-header">
+        <h3 class="box-title">{$item.name} 提供者:{$item.real_name}</h3>
+
+        {if condition="($item.create_type == 1)"}
+            <span>
+                <a href="{:url('wsdoc.show/index', ['docid'=> $item['id']])}" class="btn btn-warning  pull-right btn-dialog" title="查看" data-table-id="table" data-row-index="0" data-button-index="0"><i class="fa fa-list"></i>查看</a>
+            </span>
+        {/if}
+
+    </div>
+    <div class="box-body">
+        <div class="row">
+
+
+
+            {volist name="$item.imgs" id="vo"}
+         
+
+
+            <div class="col-sm-6 col-md-3">
+
+
+            {if condition="$vo.var_type=='mp4'" }
+            <video width="100%" height="300" controls="" webkit-playsinline="true">
+                <source src="movie.ogg" type="video/ogg">
+                <source src="{$vo.fullurl}" type="video/mp4">
+                <source src="movie.webm" type="video/webm">
+                <object data="{$vo.fullurl}" width="100%" height="300">
+                    <embed width="200" height="200" src="{$vo.fullurl}">
+                </object>
+            </video>
+
+            {elseif condition="$vo.var_type=='png'" }
+
+            <a href="{$vo.fullurl}" class="thumbnail">
+                <img src="{$vo.fullurl}">
+            </a>
+
+            {elseif condition="$vo.var_type=='pdf'" }
+
+            <a href="{$vo.fullurl}" class="btn btn-dialog">
+                <img src="__CDN__/assets/img/pdf.png" alt="" style="height: 300px"></a>
+
+
+            {/if}
+            </div>
+            {/volist}
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+    <div class="box-footer ">
+        <a href="{:url('admin/dossier.cp/question', 'id='.$item.dossier_id.'&zid='.$item.id.'&qid='.$_GET['qid'], '')}"
+           class="btn btn-warning  pull-right btn-dialog" title="图片资料" data-table-id="table"
+           data-row-index="0" data-button-index="0"><i class="fa fa-list"></i>
+            质证</a>
+
+    </div>
+</div>
+
+
+
+
+{/volist}
+
+<a  href="{:url('admin/dossier.cp/questionFinish', 'id='.$dossier_id.'&qid='.$_GET['qid'], '')}" class="btn btn-info  btn-warning-tip" data-title='提示' data-tip='{$str}'>提交</a>

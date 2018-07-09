@@ -1,0 +1,812 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/../spj/home/Lib/Action/api/external/YunBanZheng/Yw/YwValues.php" description="return array(&quot;com_name&quot;,&quot;com_name1&quot;,&quot;com_name2&quot;,&quot;c..." line="15" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0ea8cd9e-5000-4e1c-8e32-bc646891edcb" name="Default" comment="" />
+    <ignored path="fastadmin.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="fastadmin" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="test.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wwwroot/test.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Dlisttabs.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/admin/controller/dossier/Dlisttabs.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.375">
+              <caret line="35" column="27" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DListTab.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/extend/wslibs/wszc/btn/DListTab.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.72549">
+              <caret line="282" column="9" selection-start-line="282" selection-start-column="9" selection-end-line="282" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wwwroot/assets/js/backend/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.666667">
+              <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="require-backend.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wwwroot/assets/js/require-backend.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="131" column="517" selection-start-line="131" selection-start-column="517" selection-end-line="131" selection-end-column="517" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="require-backend.min.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/wwwroot/assets/js/require-backend.min.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.2550177">
+              <caret line="14746" column="51" selection-start-line="14746" selection-start-column="51" selection-end-line="14746" selection-end-column="51" />
+              <folding>
+                <marker date="1531116165000" expanded="true" signature="160797:160819" placeholder="..." />
+                <marker date="1531116165000" expanded="true" signature="734446:734458" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Zhztest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/admin/controller/Zhztest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-31.666666">
+              <caret line="1151" column="23" selection-start-line="1151" selection-start-column="23" selection-end-line="1151" selection-end-column="23" />
+              <folding>
+                <marker date="1531103507000" expanded="true" signature="10949:10979" placeholder="..." />
+                <marker date="1531103507000" expanded="true" signature="18236:18509" placeholder="..." />
+                <marker date="1531103507000" expanded="true" signature="19140:19477" placeholder="..." />
+                <marker date="1531103507000" expanded="true" signature="19502:19775" placeholder="..." />
+                <marker date="1531103507000" expanded="true" signature="19800:20122" placeholder="..." />
+                <marker date="1531103507000" expanded="true" signature="20148:20418" placeholder="..." />
+                <marker date="1531103507000" expanded="true" signature="22922:23450" placeholder="..." />
+                <marker date="1531103507000" expanded="true" signature="29088:29358" placeholder="..." />
+                <marker date="1531103507000" expanded="true" signature="30846:31117" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/application/admin/view/wxcallback/usercenter/index.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/wxcallback/usercenter/zcylist.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/wsdoc/img/index.html" />
+        <option value="$PROJECT_DIR$/application/admin/controller/wsdoc/Img.php" />
+        <option value="$PROJECT_DIR$/application/admin/view/wsdoc/img/index_phone.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/wxcallback/usercenter/guanxiaquan.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/wxcallback/usercenter/zhizheng.html" />
+        <option value="$PROJECT_DIR$/extend/wslibs/cunchuio/CunChuIO.php" />
+        <option value="$PROJECT_DIR$/application/admin/controller/Wxcallback.php" />
+        <option value="$PROJECT_DIR$/application/config.php" />
+        <option value="$PROJECT_DIR$/application/admin/controller/wsdoc/Show.php" />
+        <option value="$PROJECT_DIR$/extend/wslibs/wscontract/WsContract.php" />
+        <option value="$PROJECT_DIR$/extend/wslibs/wszc/dtip/Dtip.php" />
+        <option value="$PROJECT_DIR$/application/admin/view/wxcallback/usercenter/dabian.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/dossier/subinfo/proposal.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/wxcallback/usercenter/zjlist.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/dossier/info/files.html" />
+        <option value="$PROJECT_DIR$/application/admin/controller/wechat/Casecailiao.php" />
+        <option value="$PROJECT_DIR$/extend/wslibs/wszc/Dother.php" />
+        <option value="$PROJECT_DIR$/application/admin/view/wxcallback/usercenter/daohang.html" />
+        <option value="$PROJECT_DIR$/extend/wslibs/wszc/publicnumber/btnphone/Btnphone.php" />
+        <option value="$PROJECT_DIR$/application/admin/controller/dossier/Cp.php" />
+        <option value="$PROJECT_DIR$/application/admin/controller/Gxqyy.php" />
+        <option value="$PROJECT_DIR$/application/admin/controller/dossier/Subinfo.php" />
+        <option value="$PROJECT_DIR$/application/admin/view/dossier/cp/doclist.html" />
+        <option value="$PROJECT_DIR$/wwwroot/assets/js/require-backend.js" />
+        <option value="$PROJECT_DIR$/application/admin/controller/dossier/Info.php" />
+        <option value="$PROJECT_DIR$/application/admin/controller/dossier/Lian.php" />
+        <option value="$PROJECT_DIR$/application/admin/view/dossier/info/index.html" />
+        <option value="$PROJECT_DIR$/extend/dossier/DossierDoc.php" />
+        <option value="$PROJECT_DIR$/qrtyuioppoiuytrewrytui.txt" />
+        <option value="$PROJECT_DIR$/application/admin/controller/dossier/Caijue.php" />
+        <option value="$PROJECT_DIR$/extend/wslibs/wszc/publicnumber/mylist/Mywaitdeal.php" />
+        <option value="$PROJECT_DIR$/application/admin/controller/wechat/Myinfo.php" />
+        <option value="$PROJECT_DIR$/application/admin/controller/wechat/Index.php" />
+        <option value="$PROJECT_DIR$/application/admin/controller/wechat/Adminlist.php" />
+        <option value="$PROJECT_DIR$/extend/wslibs/wszc/publicnumber/BaseVar.php" />
+        <option value="$PROJECT_DIR$/extend/wslibs/wszc/publicnumber/NewsModel.php" />
+        <option value="$PROJECT_DIR$/application/admin/view/wsdoc/show/show11.html" />
+        <option value="$PROJECT_DIR$/extend/wslibs/wszc/dmail/file/t1.php" />
+        <option value="$PROJECT_DIR$/application/admin/view/usermanager/addjg.html" />
+        <option value="$PROJECT_DIR$/application/common/library/Email.php" />
+        <option value="$PROJECT_DIR$/extend/wslibs/wszc/Ddocs.php" />
+        <option value="$PROJECT_DIR$/application/admin/view/wsdoc/doc/zcymingce.html" />
+        <option value="$PROJECT_DIR$/extend/wslibs/wszc/notice/Dnotice.php" />
+        <option value="$PROJECT_DIR$/extend/wslibs/wszc/dmail/Dmail.php" />
+        <option value="$PROJECT_DIR$/extend/wslibs/wszc/publicnumber/ReplyMsg.php" />
+        <option value="$PROJECT_DIR$/application/admin/controller/dossier/Dlisttabs.php" />
+        <option value="$PROJECT_DIR$/application/admin/controller/Zhztest.php" />
+        <option value="$PROJECT_DIR$/extend/wslibs/wszc/btn/DListTab.php" />
+        <option value="$PROJECT_DIR$/wwwroot/assets/js/require-backend.min.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="388" />
+    <option name="y" value="54" />
+    <option name="width" value="1122" />
+    <option name="height" value="994" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fastadmin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fastadmin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zhongcai" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fastadmin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zhongcai" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wwwroot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fastadmin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zhongcai" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wwwroot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fastadmin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zhongcai" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wwwroot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ddle" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SearchEverywhereHistoryKey" value="back&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/public/assets/js/require-backend.min.js&#10;dlist&#9;null&#9;null&#10;re&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/extend/wslibs/wszc/publicnumber/ReplyMsg.php&#10;zhz&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/application/admin/controller/Zhztest.php&#10;redis&#9;null&#9;null&#10;show1&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/application/admin/view/wsdoc/show/show11.html&#10;show_1&#9;null&#9;null&#10;cons&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/extend/wslibs/wszc/Constant.php&#10;shenqingshu&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/application/admin/view/wsdoc/doc/shenqingshu.html&#10;zhongcai&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/application/admin/view/wsdoc/doc/huibizhongcaiyuan.html&#10;dnotic&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/extend/wslibs/wszc/notice/Dnotice.php&#10;dmail&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/extend/wslibs/wszc/dmail/Dmail.php&#10;myinfo&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/application/admin/controller/wechat/Myinfo.php&#10;wx&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/application/admin/controller/Wxcallback.php&#10;dmp&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/extend/wslibs/wszc/Dmp.php&#10;caijueview&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/application/admin/view/dossier/caijue/caijueview.html&#10;caijue&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/application/admin/controller/dossier/Caijue.php&#10;qrtyuioppoiuytrewrytui&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/qrtyuioppoiuytrewrytui.txt&#10;Dtip&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/extend/wslibs/wszc/dtip/Dtip.php&#10;show&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/application/admin/controller/wsdoc/Show.php&#10;con&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/extend/wslibs/wszc/DocContract.php&#10;cp&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/application/admin/controller/dossier/Cp.php&#10;dnotice&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/extend/wslibs/wszc/notice/Dnotice.php&#10;DocC&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/extend/wslibs/wszc/DocContract.php&#10;Dnotice&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/extend/wslibs/wszc/notice/Dnotice.php&#10;lian&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/application/admin/controller/dossier/Lian.php&#10;require&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/public/assets/js/require-backend.min.js&#10;backend.min.c&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/wwwroot/assets/css/backend.min.css&#10;dossierD&#9;null&#9;null&#10;info/index&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/application/admin/view/dossier/info/index.html&#10;requir&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/wwwroot/assets/js/require-backend.js&#10;info&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/application/admin/controller/dossier/Info.php&#10;subinfo&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/application/admin/controller/dossier/Subinfo.php&#10;gxq&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/application/admin/controller/Gxqyy.php&#10;doc&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/application/admin/view/dossier/cp/doclist.html&#10;btnphone&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/extend/wslibs/wszc/publicnumber/btnphone/Btnphone.php&#10;other&#9;null&#9;null&#10;dangshiren&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/application/admin/view/wxcallback/usercenter/dangshiren.html&#10;daohang&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/application/admin/view/wxcallback/usercenter/daohang.html&#10;info/files&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/application/admin/view/dossier/info/files.html&#10;img&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/application/admin/controller/wsdoc/Img.php&#10;zjlist&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/application/admin/view/wxcallback/usercenter/zjlist.html&#10;cp/doc&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/application/admin/view/dossier/cp/doclist.html&#10;propos&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/application/admin/view/dossier/subinfo/proposal.html&#10;dabian&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/application/admin/view/wxcallback/usercenter/dabian.html&#10;dangshi&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/application/admin/view/wxcallback/usercenter/dangshiren.html&#10;doclist&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/application/admin/view/docmanager/doclist.html&#10;dnoti&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/extend/wslibs/wszc/notice/Dnotice.php&#10;my&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/extend/wslibs/wszc/publicnumber/mylist/Mywaitdeal.php&#10;Gxq&#9;FILE&#9;file:///Library/WebServer/Documents/zhongcai/application/admin/controller/Gxqyy.php" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/wwwroot/assets/js/backend/wechat" />
+      <recent name="$PROJECT_DIR$/application/admin/view/wxcallback" />
+      <recent name="$PROJECT_DIR$/extend/wslibs/wszc/publicnumber" />
+      <recent name="$PROJECT_DIR$/application/admin/view/wsdoc/docmodel" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/application/admin/view/wsdoc/img" />
+      <recent name="$PROJECT_DIR$/application/admin/view/wxcallback/usercenter" />
+      <recent name="$PROJECT_DIR$/application/admin/view/inform" />
+      <recent name="$PROJECT_DIR$/wwwroot/assets/js/backend/inform" />
+      <recent name="$PROJECT_DIR$/extend/wslibs/wszc/publicnumber" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <envs />
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0ea8cd9e-5000-4e1c-8e32-bc646891edcb" name="Default" comment="" />
+      <created>1524619344093</created>
+      <option name="number" value="Default" />
+      <updated>1524619344093</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="388" y="54" width="1122" height="994" extended-state="1" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16984402" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45011085" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852387" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925472" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="11" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/application/admin/view/dossier/info/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-23.125">
+          <caret line="37" column="18" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/dossier/DossierDoc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.51877934">
+          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/controller/dossier/Cp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.583333">
+          <caret line="424" column="8" selection-start-line="424" selection-start-column="6" selection-end-line="424" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/wslibs/wszc/DocContract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.75">
+          <caret line="198" column="0" selection-start-line="198" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/wslibs/wscontract/WsContract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.375">
+          <caret line="452" column="7" selection-start-line="452" selection-start-column="7" selection-end-line="452" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/wslibs/wszc/dtip/Dtip.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.833333">
+          <caret line="137" column="27" selection-start-line="137" selection-start-column="27" selection-end-line="137" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qrtyuioppoiuytrewrytui.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/dossier/caijue/caijueview.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="80" column="49" selection-start-line="80" selection-start-column="49" selection-end-line="80" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/wslibs/wszc/Ds.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="82" column="59" selection-start-line="82" selection-start-column="59" selection-end-line="82" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/controller/dossier/Caijue.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="269" column="46" selection-start-line="269" selection-start-column="46" selection-end-line="269" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/wslibs/wszc/caijue/Dcaijue.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="58" column="9" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/caijueneirong.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/wslibs/run/WsExce.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.75">
+          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/controller/Wxcallback.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.625">
+          <caret line="41" column="39" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/wslibs/wszc/Dmp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13333334">
+          <caret line="584" column="31" selection-start-line="584" selection-start-column="31" selection-end-line="584" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/wslibs/wszc/publicnumber/Token.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/wslibs/wszc/publicnumber/Config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="87.5">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/wslibs/wszc/publicnumber/PublicNumber.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/wslibs/wszc/publicnumber/mylist/Mywaitdeal.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-28.125">
+          <caret line="70" column="42" selection-start-line="70" selection-start-column="42" selection-end-line="70" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/controller/wechat/Myinfo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.5">
+          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/common/controller/Backend.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.25">
+          <caret line="137" column="31" selection-start-line="137" selection-start-column="20" selection-end-line="137" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/controller/wechat/Adminlist.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/wsdoc/doc/huibizhongcaiyuan.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.75">
+          <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/wsdoc/doc/shenqingshu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="77" selection-start-line="7" selection-start-column="77" selection-end-line="7" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/wsdoc/show/show11.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="333" column="12" selection-start-line="333" selection-start-column="10" selection-end-line="333" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/wslibs/wszc/dmail/file/t1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="93" selection-start-line="10" selection-start-column="93" selection-end-line="10" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/usermanager/addjg.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26408452">
+          <caret line="15" column="81" selection-start-line="15" selection-start-column="81" selection-end-line="15" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thinkphp/library/think/cache/driver/Redis.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="164" column="65" selection-start-line="164" selection-start-column="65" selection-end-line="164" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/common/library/Email.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="168" column="41" selection-start-line="168" selection-start-column="32" selection-end-line="168" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/controller/wsdoc/Show.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="388" column="24" selection-start-line="388" selection-start-column="24" selection-end-line="388" selection-end-column="24" />
+          <folding>
+            <marker date="1530673279000" expanded="true" signature="5070:5083" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/wslibs/wszc/Ddocs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="233" column="69" selection-start-line="233" selection-start-column="69" selection-end-line="233" selection-end-column="69" />
+          <folding>
+            <element signature="e#114#141#0#PHP" expanded="false" />
+            <marker date="1530865441000" expanded="true" signature="4454:4465" placeholder="..." />
+            <marker date="1530865441000" expanded="true" signature="4598:4609" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/wslibs/wszc/notice/Dnotice.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="246" column="70" selection-start-line="246" selection-start-column="70" selection-end-line="246" selection-end-column="70" />
+          <folding>
+            <element signature="e#123#146#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wwwroot/test1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="177" selection-start-line="0" selection-start-column="177" selection-end-line="0" selection-end-column="177" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/wslibs/wszc/Dossier.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="249" column="0" selection-start-line="249" selection-start-column="0" selection-end-line="249" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/wslibs/wszc/publicnumber/ReplyMsg.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="40" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/wslibs/wszc/publicnumber/BaseVar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/wslibs/wszc/Constant.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="73" column="49" selection-start-line="73" selection-start-column="10" selection-end-line="73" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/wslibs/wszc/dmail/Dmail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="297" column="79" selection-start-line="297" selection-start-column="79" selection-end-line="297" selection-end-column="79" />
+          <folding>
+            <element signature="e#36#65#0#PHP" expanded="false" />
+            <marker date="1530933710000" expanded="true" signature="14900:14914" placeholder="..." />
+            <marker date="1530933710000" expanded="true" signature="14992:15006" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/wslibs/wszc/publicnumber/NewsModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="96" column="108" selection-start-line="96" selection-start-column="101" selection-end-line="96" selection-end-column="108" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/wslibs/wszc/qx/Qx.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41764706">
+          <caret line="87" column="53" selection-start-line="87" selection-start-column="53" selection-end-line="87" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/dmconfig/dmConfig.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/dossier/DossierConfig.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wwwroot/test.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/controller/dossier/Dlisttabs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.375">
+          <caret line="35" column="27" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/controller/Zhztest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-31.666666">
+          <caret line="1151" column="23" selection-start-line="1151" selection-start-column="23" selection-end-line="1151" selection-end-column="23" />
+          <folding>
+            <marker date="1531103507000" expanded="true" signature="10949:10979" placeholder="..." />
+            <marker date="1531103507000" expanded="true" signature="18236:18509" placeholder="..." />
+            <marker date="1531103507000" expanded="true" signature="19140:19477" placeholder="..." />
+            <marker date="1531103507000" expanded="true" signature="19502:19775" placeholder="..." />
+            <marker date="1531103507000" expanded="true" signature="19800:20122" placeholder="..." />
+            <marker date="1531103507000" expanded="true" signature="20148:20418" placeholder="..." />
+            <marker date="1531103507000" expanded="true" signature="22922:23450" placeholder="..." />
+            <marker date="1531103507000" expanded="true" signature="29088:29358" placeholder="..." />
+            <marker date="1531103507000" expanded="true" signature="30846:31117" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/require-backend.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33293977">
+          <caret line="10533" column="25" selection-start-line="10533" selection-start-column="22" selection-end-line="10533" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/wslibs/wszc/btn/DListTab.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.72549">
+          <caret line="282" column="9" selection-start-line="282" selection-start-column="9" selection-end-line="282" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wwwroot/assets/js/require.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wwwroot/assets/js/backend/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.666667">
+          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wwwroot/assets/js/require-backend.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="131" column="517" selection-start-line="131" selection-start-column="517" selection-end-line="131" selection-end-column="517" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wwwroot/assets/js/require-backend.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2550177">
+          <caret line="14746" column="51" selection-start-line="14746" selection-start-column="51" selection-end-line="14746" selection-end-column="51" />
+          <folding>
+            <marker date="1531116165000" expanded="true" signature="160797:160819" placeholder="..." />
+            <marker date="1531116165000" expanded="true" signature="734446:734458" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

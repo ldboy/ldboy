@@ -1,0 +1,25 @@
+<div class="xywrap">
+    <section class="title_one">质证意见</section>
+    <div class="main_info margintop">
+        <p class="kongtwo">申 请 人：<span>法定代表人：{$d.users.role.1.0.f_name} {$d.users.role.1.0.name}</span></p>
+        <p class="kongtwo">住&nbsp;&nbsp;&nbsp;&nbsp;所：<span>{$d.users.role.1.0.address}</span></p>
+        <?php foreach($d[users][role][2] as $ke=>$value){ ?>
+        <p class="kongtwo">被申请人：<span><?php echo $value['name'] ?> <?php echo $value['sex'] ?> <?php echo $value['birthday'] ?> <?php echo $value['nation'] ?></span></p>
+        <p class="kongtwo">住&nbsp;&nbsp;&nbsp;&nbsp;所：<span><?php echo $value['address'] ?></span></p>
+        <?php } ?>
+    </div>
+    <div class="content con">
+        <p class="kongtwo">我方对{$d.test_question.me.tjr.role}{$d.test_question.me.tjr.real_name}提交的证据发表如下质证意见:</p>
+        <p class="kongtwo">{$d.test_question.me.zhizhengyijian}</p>
+    </div>
+    <div class="xeiyibtm1 clearfix">
+        <p class="kongtwo">此致</p>
+        <p>{$d.jigou.info.name}</p>
+    </div>
+    <div class="clearfix"></div>
+    <div class="signbtm" style="width:418px!important;">
+        <div class="sign1">质证人（代理人）：&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ffffff;">{$d.uniquevalue.signer_code}</span></div>
+        <div class="tt">日期：{$d.sign.time.string}</div>
+    </div>
+    <div style="clear:both;"></div>
+</div>

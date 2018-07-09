@@ -1,0 +1,35 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label for="c-name" class="control-label col-xs-12 col-sm-2">选择仲裁员:</label>
+        <div class="col-xs-12 col-sm-8">
+
+            <select id="c-name" data-rule="required" class="form-control selectpicker" name="row[name]">
+                <option value="" >请选择</option>
+                {foreach name="$zcyList" item="vo"}
+
+                <option value="{$vo['id']}" >[{$vo['remind']}]{$vo['name']}（{$vo['province_name']}{$vo['city_name']}{$vo['district_name']}）------------仲裁案件总量：{$vo['total']}，已完成仲裁案件数量：{$vo['finish_num']}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+
+    {if condition="$_GET['again']"}
+    <div class="form-group">
+        <label for="c-name" class="control-label col-xs-12 col-sm-2">重新指定原因:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea name="row[reason]" class="form-control " rows="5"   cols="50"></textarea>
+
+        </div>
+    </div>
+
+    {/if}
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed">提交</button>
+        </div>
+    </div>
+</form>

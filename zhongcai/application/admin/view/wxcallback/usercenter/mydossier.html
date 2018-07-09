@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>我的案件</title>
+
+    <link rel="stylesheet" href="__CDN__/assets/css/wechat/mall.css" type="text/css" />
+    <style>
+        .quit_btn1{
+
+            border:1px solid green;
+            border-radius:5px;
+            color: #000000;
+            font-size: 15px;
+            padding:0 10px;
+            display: block;
+            text-align: center;
+            line-height:38px;
+            margin:8px auto 4px;
+
+        }
+
+
+        </style>
+</head>
+
+
+
+
+<body class="body_color">
+<div class="mall_main">
+<div id="child_header">
+    <div class="goback"><a href="javascript:history.back(-1)"><i></i></a></div>
+    <div class="current_location"><span>我的案件</span></div>
+</div>
+    <div style="text-align: center">案件数:{$count}件</div>
+<div class="my_points">
+
+    {if $info}
+
+    {foreach $info as $key=>$value}
+
+    <div class="all_points" style="text-align: center; color: orange" > 案号:{$value.zno_str} &nbsp;&nbsp;&nbsp; <a style="color: green"  href="http://zcw.wszx.cc/admin/wechat/myinfo/daohang?idid={$idid}&did={$value.id}">详情</a>  </div>
+
+        <p>
+            <span>案由</span><em>{$value.title}</em>
+            <span>申请人</span><time>{$value.apply_peo}</time>
+            <span >被申请人</span><time>{$value.bei_apply_peo}</time>
+            <!--<span>仲裁员</span><time>{$value.zcy_peo}</time>-->
+            <span >案件进度</span><time>{$value.status_string}</time>
+            <span>仲裁机构</span><time>{$value.zcjigou}</time>
+            <span>申请时间</span><time>{$value.addtime}</time>
+            <span>立案时间</span><time>{$value.time30}</time>
+        </p>
+
+    {/foreach}
+     <span  style="color: green; display:block; line-height: 40px; height: 40px; margin: 0 auto; text-align: center">----以上为与您所有相关的案件----</span>
+    {else}
+    <div class="all_points"><span><b>暂无案件数据</b></span></div>
+
+    {/if}
+</div>
+
+
+</div>
+<script>
+    function zhiding(url){
+        var tmp =window.confirm('确定要提交吗');
+        if(tmp == true){
+            window.location.href=url;
+        }
+
+    }
+</script>
+
+</body>
+</html>

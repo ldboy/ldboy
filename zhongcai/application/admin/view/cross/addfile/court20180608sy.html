@@ -1,0 +1,49 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+<h3>请选择仲裁员</h3>
+{volist name="zcyList" id="vo" }
+
+<div class="col-sm-4 col-md-3" style="width: 200px; " >
+
+    <div class="thumbnail example">
+        <?php if($vo['remind_show']):?><span class="btn btn-success">{$vo['remind']}</span><?php else:?><span class="btn btn-info">{$vo['remind']}</span><?php endif;?>
+
+        <img style=" display: block;max-width: 100%; height: 160px;" <?php if($vo['show']):?> src="{$vo['show']}" <?php else:?>src="https://ws2.sinaimg.cn/large/006tNc79gy1fgphwt8nq8j30e609f3z4.jpg" <?php endif;?>  alt="头像">
+        <div class="caption">
+            <h4>仲裁员姓名：{$vo['name']}</h4>
+            <p class="text-muted">仲裁案件总量：{$vo['total']}</p>
+            <p class="text-muted">已完成案件数量：{$vo['finish_num']}</p>
+            <p class="text-muted">地区：{$vo['province_name']}{$vo['city_name']}{$vo['district_name']}</p>
+            <p>
+                <a class="btn btn-primary btn-success btn-detail" data-id="6210"><i class="fa  fa-gavel"></i> 编号:{$vo['id']}</a>
+            <span class="pull-right" style="margin-top:10px;">
+                
+                    <!--如果需要多选操作，请确保有下面的checkbox元素存在,可移除-->
+                     <label for="{$vo['id']}">指定<input id="{$vo['id']}" name="row[name]" value="{$vo['id']}" data-id="6211" type="radio" /></label>
+            </span>
+            </p>
+        </div>
+    </div>
+</div>
+{/volist}
+
+    <div style="clear: both"></div>
+
+    {if condition="$_GET['again']"}
+    <div class="form-group">
+        <label for="c-name" class="control-label col-xs-12 col-sm-2">重新指定原因:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea name="row[reason]" class="form-control " rows="5"   cols="50"></textarea>
+
+        </div>
+    </div>
+
+    {/if}
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed">提交</button>
+        </div>
+    </div>
+</form>
+{$page}

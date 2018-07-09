@@ -1,0 +1,57 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+
+    <div class="layui-layer-title">资料上传</div>
+
+    <div class="panel panel-default panel-intro panel-body">
+
+        <div>
+
+            <?php for($__index=0;$__index<$ziliao_num ;$__index++) {  ?>
+
+
+            <div>
+                <div class="form-group">
+                    <label for="c-img" class="control-label col-xs-12 col-sm-2">资料描述:</label>
+                    <div class="col-xs-12 col-sm-8">
+                        <div class="input-group">
+                            <input id="c-img5aea747e327572019" class="form-control" size="50" readonly
+                                   name="row[ziliao][img][]" type="text" value="{$row.ziliao.img[$__index]}"><input
+                                id="c-img5aea747e327572019_id" name="row[ziliao][img_id][]" type="hidden"
+                                value="{$row.ziliao.img_id[$__index]}">
+                            <div class="input-group-addon no-border no-padding">
+                                <span><button type="button" id="plupload-img5aea747e327572019"
+                                              class="btn btn-danger plupload" data-maxsize="10M" data-input-id="c-img5aea747e327572019"
+                                              data-multiple="true"><i
+                                        class="fa fa-upload"></i> {:__('Upload')}</button></span>
+
+                            </div>
+                            <span class="msg-box n-right" for="c-img"></span>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="c-title" class="control-label col-xs-12 col-sm-2">资料描述:</label>
+                    <div class="col-xs-12 col-sm-8">
+                        <textarea id="c-title" class="form-control " rows="5" name="row[ziliao][title][]" cols="50">{$row.ziliao.title[$__index]}</textarea>
+                    </div>
+                </div>
+            </div>
+
+
+            <?php } ?>
+
+        </div>
+
+    <div class="form-group  panel-body">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed btn-warning-tip" data-title='提示' data-tip='确定要提交资料吗？'>{:__('OK')}</button>
+
+        </div>
+    </div>
+
+
+</form>
+

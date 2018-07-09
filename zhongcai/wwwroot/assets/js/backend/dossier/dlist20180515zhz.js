@@ -1,0 +1,90 @@
+define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefined, Backend, Table, Form) {
+
+    var Controller = {
+        index: function () {
+            // 初始化表格参数配置
+            Table.api.init({
+                extend: {
+                    index_url: 'dossier.dlist/dlist',
+                    table: 'dlist',
+                    view_url:'dossier.info/index?id=',
+                    view_url1:'dossier/cp/add?dossier_id='
+                }
+            });
+
+
+            var table = $("#table");
+            var tableOptions = {
+                url: $.fn.bootstrapTable.defaults.extend.index_url,
+                escape: false,
+                pk: 'id',
+                sortName: 'addtime',
+                pagination: true,
+                commonSearch: true,
+                columns: [
+                    [
+
+                        {field: 'id', title: "ID"},
+                        {field: 'zno', title: "受理编号"},
+                        {field: 'sq_time', title: "申请时间"},
+                        {field: 'sl_time', title: "受理时间"},
+
+                        {field: 'sq_string', title: "申请方", align: 'left'},
+                        {field: 'bsq_string', title: "被申请方",align: 'left'},
+
+                        {field: 'status_string', title: "当前状态", operate: false, formatter: Table.api.formatter.bgcolorClass},
+                        {field: 'zcw_name', title: "操作人"},
+                        {field: 'operate', title: __('Operate'), formatter: function () {
+
+                             return '<a href="'+(arguments[1]['status']==1? ($.fn.bootstrapTable.defaults.extend.view_url1+arguments[1]['id']):($.fn.bootstrapTable.defaults.extend.view_url+arguments[1]['id']))+'" class="btn btn-info btn-xs btn-detail btn-addtabs" title="卷宗Id:'+arguments[1]['id']+'" ></i>查看</a>'
+                        }}
+                    ]
+                ]
+            };
+            // 初始化表格
+            table.bootstrapTable(tableOptions);
+
+            // 为表格绑定事件
+            Table.api.bindevent(table);
+
+            //绑定TAB事件
+            $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                // var options = table.bootstrapTable(tableOptions);
+                var typeStr = $(this).attr("href").replace('#','');
+                var options = table.bootstrapTable('getOptions');
+                options.pageNumber = 1;
+                options.queryParams = function (params) {
+                    // params.filter = JSON.stringify({type: typeStr});
+                    params.type = typeStr;
+
+                    return params;
+                };
+                table.bootstrapTable('refresh', {});
+                return false;
+
+            });
+
+            //必须默认触发shown.bs.tab事件
+            // $('ul.nav-tabs li.active a[data-toggle="tab"]').trigger("shown.bs.tab");
+
+        },
+        add: function () {
+            Controller.api.bindevent();
+        },
+        edit: function () {
+            Controller.api.bindevent();
+        },
+        api: {
+            bindevent: function () {
+                $(document).on("change", "#c-type", function () {
+                    $("#c-pid option[data-type='all']").prop("selected", true);
+                    $("#c-pid option").removeClass("hide");
+                    $("#c-pid option[data-type!='" + $(this).val() + "'][data-type!='all']").addClass("hide");
+                    $("#c-pid").selectpicker("refresh");
+                });
+                Form.api.bindevent($("form[role=form]"));
+            }
+        }
+    };
+    return Controller;
+});

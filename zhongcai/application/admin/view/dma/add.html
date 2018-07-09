@@ -1,0 +1,52 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label for="c-doc_model_id" class="control-label col-xs-12 col-sm-2">文档模型id:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-doc_model_id" data-rule="required" class="form-control" name="row[doc_model_id]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-type" class="control-label col-xs-12 col-sm-2">类型:</label>
+        <div class="col-xs-12 col-sm-8">
+            <?php  $typelist=  json_decode('["\u8bf7\u9009\u62e9","\u8868\u5355","\u64cd\u4f5c","\u4e0a\u4f20"]',true);   ?>            
+            <select  id="c-type" data-rule="required" class="form-control selectpicker" name="row[type]">
+                {foreach name="$typelist" item="vo"}
+                    <option value="{$key}" {in name="key" value=""}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-sub_type" class="control-label col-xs-12 col-sm-2">二级类型:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-sub_type" data-rule="required" class="form-control" name="row[sub_type]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-name" class="control-label col-xs-12 col-sm-2">提示:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-name" data-rule="required" class="form-control" name="row[name]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-flag" class="control-label col-xs-12 col-sm-2">唯一标识:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-flag" data-rule="required" class="form-control" name="row[flag]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-sync_id" class="control-label col-xs-12 col-sm-2">同步id:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-sync_id" data-rule="required" class="form-control" name="row[sync_id]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

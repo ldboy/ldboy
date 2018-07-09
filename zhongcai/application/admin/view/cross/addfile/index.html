@@ -1,0 +1,96 @@
+
+<form  class="form-horizontal" id="cxselectform" action="" method="post">
+
+
+    <div id="cxselectform1" class="panel-body">
+
+        <div class="form-group">
+            <label for="name" class="control-label col-xs-12 col-sm-2">姓名:</label>
+            <div class="col-xs-12 col-sm-8">
+                <input id="name" class="form-control" readonly type="text" value="{$name}">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="diqu" class="control-label col-xs-12 col-sm-2">地区:</label>
+
+            <div class="col-xs-12 col-sm-8">
+
+
+                <div id="diqu" class="form-inline" data-toggle="cxselect" data-selects="province,city,area">
+                    <select class="province form-control" name="province" data-url="ajax/area">
+                        <option value="{$province}" selected="">{$province_name}</option>
+                    </select>
+                    <select class="city form-control" name="city" data-url="ajax/area">
+                        <option value="{$city}" selected="">{$city_name}</option>
+                    </select>
+                    <select class="area form-control" name="area" data-url="ajax/area">
+                        <option value="{$district}" selected="">{$district_name}</option>
+                    </select>
+                </div>
+
+
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label for="c-img" class="control-label col-xs-12 col-sm-2">头像(*请上传真实头像):</label>
+            <div class="col-xs-12 col-sm-8">
+                <div class="input-group">
+                    <input id="c-img5b14a76debcdb3018" data-rule="required" class="form-control" size="50" name="row[img]" type="" value="{$row.img}"><input id="c-img5b14a76debcdb3018_id" name="row[img_id]" type="hidden" value="{$row.img_id}">
+                    <div class="input-group-addon no-border no-padding">
+                        <span><button type="button" id="plupload-img5b14a76debcdb3018" class="btn btn-danger plupload" data-input-id="c-img5b14a76debcdb3018" data-multiple="false"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                        <!--<span><button type="button" id="fachoose-img5b14a76debcdb3018" class="btn btn-primary fachoose" data-input-id="c-img5b14a76debcdb3018" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>-->
+                    </div>
+                    <span class="msg-box n-right" for="c-img"></span>
+                </div>
+
+            </div>
+        </div>
+
+        <?php if($row['img']):?>
+        <div  class="form-group">
+            <label for="avatar" class="control-label col-xs-12 col-sm-2">头像展示:</label>
+            <div class="col-xs-12 col-sm-8">
+
+                <img id="avatar" height="30%" width="30%" src="{$row['show']}">
+            </div>
+        </div>
+        <?php endif;?>
+
+        <div class="form-group">
+            <label for="address" class="control-label col-xs-12 col-sm-2">详细地址:</label>
+            <div class="col-xs-12 col-sm-8">
+                <input id="address" class="form-control" type="text" name="address" value="{$address}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="speciality" class="control-label col-xs-12 col-sm-2">特长:</label>
+            <div class="col-xs-12 col-sm-8">
+                <textarea id="speciality" class="form-control" name="speciality">{$speciality}</textarea>
+            </div>
+        </div>
+
+        <?php if($sign_img):?>
+
+        <div  class="form-group">
+            <label for="sign_img" class="control-label col-xs-12 col-sm-2">签名:</label>
+            <div class="col-xs-12 col-sm-8">
+                <img id="sign_img" height="30%" width="30%" src="{$sign_img}">
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="{:url('wsdoc.sign/signimg')}" class="btn btn-info btn-xs btn-detail btn-dialog" title="修改签名">修改签名</a>
+            </div>
+        </div>
+
+        <?php endif;?>
+
+    </div>
+    <div>
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+
+</form>

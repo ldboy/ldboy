@@ -1,0 +1,52 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label for="c-name" class="control-label col-xs-12 col-sm-2">机构名称:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-name5afbe75f7ca832350" data-rule="required" class="form-control" name="row[name]" type="text" value="{$row.name}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-address" class="control-label col-xs-12 col-sm-2">机构地址:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-address5afbe75f7cbcd3647" data-rule="required" class="form-control" name="row[address]" type="text" value="{$row.address}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-tel" class="control-label col-xs-12 col-sm-2">联系方式:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-tel5afbe75f7ccab9811" data-rule="required" class="form-control" name="row[tel]" type="text" value="{$row.tel}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-status" class="control-label col-xs-12 col-sm-2">状态:</label>
+        <div class="col-xs-12 col-sm-8">
+            <?php  $statuslist=  json_decode('["\u672a\u542f\u7528","\u542f\u7528"]',true);   ?>            
+            <select  id="c-status" data-rule="required" class="form-control selectpicker" name="row[status]">
+                {foreach name="$statuslist" item="vo"}
+                    <option value="{$key}" {in name="key" value="$row.status"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-zc_jg_id" class="control-label col-xs-12 col-sm-2">仲裁机构id:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-zc_jg_id5afbe75f7ce2e7021" data-rule="required" class="form-control" name="row[zc_jg_id]" type="text" value="{$row.zc_jg_id}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-a_jgid" class="control-label col-xs-12 col-sm-2">银行id:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-a_jgid5afbe75f7cf063673" data-rule="required" class="form-control" name="row[a_jgid]" type="text" value="{$row.a_jgid}">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

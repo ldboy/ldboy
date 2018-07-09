@@ -1,0 +1,46 @@
+<div class="box box-success">
+    <div class="box-header">
+        <!--<h3 class="box-title">{$title}</h3>-->
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body table-responsive">
+        <table class="table table-hover">
+            <tbody>
+            <tr>
+                <th>文件ID</th>
+                <th>文件名称</th>
+                <th>状态</th>
+                <th>操作</th>
+
+            </tr>
+            {volist name="files" id="vo"}
+            <tr>
+                <td>{$vo.id}</td>
+                <td>{$vo.name}</td>
+                <td>未完成</td>
+                <td>
+                    {if condition="($vo['mode_type'] == 1) "}
+                    <a href="{:url('admin/wsdoc.img/index', 'docid='.$vo.id, '')}"
+                       class="btn btn-info btn-xs btn-detail btn-dialog" title="查看" data-table-id="table"
+                       data-row-index="0" data-button-index="0"><i class="fa fa-list"></i>
+                        查看</a>
+                    {else}
+                    <a href="{:url('admin/wsdoc.img/index', 'docid='.$vo.id, '')}"
+                       class="btn btn-info btn-xs btn-detail btn-dialog bg-purple" title="图片资料"
+                       data-table-id="table"
+                       data-row-index="0" data-button-index="0"><i class="fa fa-list"></i>
+                        图片资料</a>
+                    {/if}
+                </td>
+
+            </tr>
+            {/volist}
+
+            </tbody>
+        </table>
+
+
+    </div>
+
+    <!-- /.box-body -->
+</div>

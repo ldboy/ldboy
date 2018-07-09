@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>当事人</title>
+    <style>
+        .quit_btn1{
+
+            border:1px solid green;
+            border-radius:5px;
+            color: #000000;
+            font-size: 15px;
+            padding:0 10px;
+            display: block;
+            text-align: center;
+            line-height:38px;
+            margin:8px auto 4px;
+
+        }
+        .current_location_zhz  { font-size: 18px;color: #3c8dbc}
+        .mall_main .address_list .list_left{
+            border: none;
+        }
+        .mall_main .address_list{
+            padding: 3% 3% 3%;
+        }
+        .mall_main  .pw2 span{
+            float: right;
+        }
+        .mall_main .address_list .list_left .pw2{
+            width: 100%
+        }
+        #child_header{ position: relative; }
+        .mall_main .current_location{ width: 100%; height: 100%; text-align: center; }
+        .mall_main #child_header .current_location span{ float: none; }
+        #child_header .goback{position: absolute; left: 4%; z-index: 10;}
+    </style>
+    <link rel="stylesheet" href="http://zcw.wszx.cc/assets/css/wechat/mall.css" type="text/css" />
+</head>
+<body>
+<div class="mall_main">
+    <div id="child_header">
+        <div class="goback"><a href="javascript:history.back(-1)"><i></i></a></div>
+        <div class="current_location"><span>当事人</span></div>
+    </div>
+    {foreach name="dangshiren" item="vo"}
+
+    <div class="address_list clearfix">
+        <div class="list_left clearfix">
+            <div class="pw2">
+                <p ><b>身份：<span>{$vo.role}</span></b></p>
+                <p >姓名/机构名称：<span>{$vo.name}</span></p>
+                <p>身份证/机构组织代码：<span>{$vo.id_num}</span></p>
+                <p>电话/备注：<span>{$vo.phone}</span></p>
+                <p>地址：<span>{$vo.address}</span></p>
+                <p>Email：<span>{$vo.email}</span></p>
+
+            </div>
+        </div>
+    </div>
+
+    <br>
+    {/foreach}
+    <span  style="color: green; display:block; line-height: 40px; height: 40px; margin: 0 auto; text-align: center">----以上为所有的当事人信息----</span>
+
+</div>
+
+<script>
+    function zhiding(url){
+        var tmp =window.confirm('确定要提交吗');
+        if(tmp == true){
+            window.location.href=url;
+        }
+
+    }
+</script>
+</body>
+</html>

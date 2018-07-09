@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {include file="common/meta" /}
+
+        <style type="text/css">
+            body {
+                color:#999;
+                background:url('/zhongcai/assets/img/loginbg.jpg');
+                background-size:cover;
+            }
+            a {
+                color:#fff;
+            }
+            .login-panel{margin-top:150px;}
+            .login-screen {
+                max-width:400px;
+                padding:0;
+                margin:100px auto 0 auto;
+
+            }
+            .login-screen .well {
+                border-radius: 3px;
+                -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                background: rgba(255,255,255, 0.2);
+            }
+            .login-screen .copyright {
+                text-align: center;
+            }
+            @media(max-width:767px) {
+                .login-screen {
+                    padding:0 20px;
+                }
+            }
+            .profile-img-card {
+                width: 100px;
+                height: 100px;
+                margin: 10px auto;
+                display: block;
+                -moz-border-radius: 50%;
+                -webkit-border-radius: 50%;
+                border-radius: 50%;
+            }
+            .profile-name-card {
+                text-align: center;
+            }
+
+            #login-form {
+                margin-top:20px;
+            }
+            #login-form .input-group {
+                margin-bottom:15px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="login-wrapper">
+                <div class="login-screen">
+                    <div class="well">
+                        <div class="login-form">
+                            <img id="profile-img" class="profile-img-card" src="__CDN__/assets/img/avatar.png" />
+                            <p id="profile-name" class="profile-name-card"></p>
+
+                            <form action="http://192.168.0.7/zhongcai/index.php/admin/userlogin/login" method="post" id="login-form">
+                                <div id="errtips" class="hide"></div>
+
+                                <input type="hidden"   name="code" autocomplete="off" value="{$code}"  />
+                                <div class="input-group">
+                                    <?php if($is_invalid){ ?>
+                                     <span aria-setsize="1.2m" aria-hidden="true">{$user_info.phone_}</span>
+                                    <?php }else{ ?>
+                                     <span aria-setsize="1.2m" aria-hidden="true">{$user_info.phone_}</span>
+
+                                    <?php } ?>
+                                </div>
+                                <div class="input-group">
+                                    <div class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></div>
+                                    <input type="text" class="form-control" id="pd-form-username" placeholder="请输入身份证号" name="id_card" autocomplete="off" value="130102199708280318" data-rule="required;" />
+                                </div>
+
+                                <div class="input-group">
+                                    <div class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></div>
+                                    <input type="text" class="form-control" id="phone" placeholder="请输入完整的手机号" name="phone" autocomplete="off" value="13933863958" data-rule="required;" /><span id = "code" onclick="ajaxCode()">获取验证码</span>
+                                </div>
+                                <div class="input-group">
+                                    <div class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></div>
+                                    <input type="text" class="form-control"  placeholder="请输入手机号验证码" name="yzm" autocomplete="off" value="121313" data-rule="required;" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="inline" for="keeplogin">
+                                        <input type="checkbox" name="keeplogin" id="keeplogin" value="1" />
+                                        {:__('Keep login')}
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-success btn-lg btn-block">{:__('Sign in')}</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <p><a style="color: green" href="https://www.wszx.cc">河北文始征信服务有限公司 提供技术支持</a></p>
+                </div>
+            </div>
+        </div>
+        {include file="common/script" /}
+    </body>
+
+    <script>
+        function ajaxCode()
+        {
+            var phone = $('#phone').val();
+            if(!(/^1[3|4|5|6|7|8|9][0-9]\d{4,8}$/.test(phone))){
+
+                alert("手机号格式错误");
+
+                return false;
+            }
+
+            $.ajax({
+                url:'http://192.168.0.7/zhongcai/index.php/admin/userlogin/code',
+                type:'post',
+                data:'phone='+phone,
+                async : true, //默认为true 异步
+                error:function(){
+                    alert('获取失败');
+                },
+                success:function(data){
+                    if(data.code==1){
+
+                        alert('成功');
+                        $("#er").html('发送成功');
+
+                    }else{
+                        $("#er").html('发送失败');
+                    }
+                }
+            });
+        }
+    </script>
+</html>

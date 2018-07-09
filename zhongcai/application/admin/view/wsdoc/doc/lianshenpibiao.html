@@ -1,0 +1,43 @@
+<?php
+    $d['info']['request'] = nl2br($d['info']['request']);
+?>
+<div class="table_con">
+    <div class="tab_title">{$d.jigou.info.name}</div>
+    <div class="tab_title2">立案审批表</div>
+    <div class="time">{$d.sign.time.string}</div>
+    <table cellspacing="0">
+        <tr>
+            <td>案号</td>
+            <td width="80%">{$d.info.zno_str}</td>
+        </tr>
+        <tr>
+            <td>申请人</td>
+            <td>{$d.users.role.1.0.name}</td>
+        </tr>
+        <tr>
+            <td>被申请人</td>
+            <td>{$d.users.role.2.0.bei_apply_peo}</td>
+        </tr>
+        <tr>
+            <td>案情<br>摘要</td>
+            <td style="text-align: left">上述双方当事人因{$d.info.title}发生纠纷，申请人请求：<br>{$d.info.request}</td>
+        </tr>
+        <tr>
+            <td>承办人<br>意见</td>
+            <td>
+                {$d.uniquevalue.Shouliyijian}&nbsp;&nbsp;<p style="color: #ffffff;width:15px; height:15px;">{$d.sign.imgs.1}</p>
+            </td>
+        </tr>
+        <tr>
+            <td>主管领导<br>意见</td>
+            <td>
+                {$d.uniquevalue.zhurenShouliyijian}&nbsp;&nbsp;<p style="color: #ffffff; width:15px; height:15px;">{$d.sign.imgs.0}</p>
+            </td>
+        </tr>
+        <tr>
+            <td>备注</td>
+            <td></td>
+        </tr>
+    </table>
+</div>
+

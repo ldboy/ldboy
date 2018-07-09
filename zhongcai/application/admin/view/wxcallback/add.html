@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {include file="common/meta" /}
+
+    <style type="text/css">
+        body {
+            color:#999;
+            background:url('http://zcw.wszx.cc/assets/img/loginbg.jpg');
+            background-size:cover;
+        }
+        a {
+            color:#fff;
+        }
+
+        .container{
+            margin-top:10px;
+        }
+        .login-panel{margin-top:150px;}
+        .login-screen {
+            max-width:400px;
+            padding:0;
+            margin:100px auto 0 auto;
+
+        }
+        .login-screen .well {
+            border-radius: 3px;
+            -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background: rgba(255,255,255, 0.2);
+        }
+        .login-screen .copyright {
+            text-align: center;
+        }
+        @media(max-width:767px) {
+            .login-screen {
+                padding:0 20px;
+            }
+        }
+        .profile-img-card {
+            width: 50px;
+            height: 50px;
+            margin: 5px auto;
+            display: block;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+        }
+        .profile-name-card {
+            text-align: center;
+        }
+
+        #login-form {
+            margin-top:5px;
+        }
+        #login-form .input-group {
+            margin-bottom:30px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="login-wrapper">
+        <div class="login-screen">
+            <div class="well">
+                <div class="login-form">
+                    <img id="profile-img" class="profile-img-card" src="__CDN__/assets/img/logo_zc.png" />
+                    <p id="profile-name" class="profile-name-card"></p>
+
+                    <form action="http://zcw.wszx.cc/admin/Wxcallback/bind" method="post" id="login-form">
+                        <div id="errtips" class="hide"></div>
+
+                        <input type="hidden"   name="openid" autocomplete="off" value="{$openid}"  />
+
+                        <div class="input-group">
+                            <div class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></div>
+                            <input type="text" class="form-control" id="pd-form-username" placeholder="请输入手机号" name="phone" autocomplete="off" value="" data-rule="required;" />
+                        </div>
+
+                        <div class="input-group">
+                            <div class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></div>
+                            <input type="password" class="form-control" id="pass" placeholder="请输入密码" name="pass" autocomplete="off" value="" data-rule="required;" />
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success btn-lg btn-block">{:__('Sign in')}</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <p align="center"><a style="color: green"  href="https://www.wszx.cc">河北文始征信服务有限公司<br> 提供技术支持</a></p>
+        </div>
+    </div>
+</div>
+{include file="common/script" /}
+</body>
+
+</html>

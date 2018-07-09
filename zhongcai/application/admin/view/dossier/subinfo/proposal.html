@@ -1,0 +1,16 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+    <input type="hidden" name="row[qid]" value="{$qid}" />
+    <input type="hidden" name="row[is_phone]" value="{$is_phone}" />
+     <div class="form-group">
+         <label for="c-shenpiyijian" class="control-label col-xs-12 col-sm-2">请输入修改建议:</label>
+         <div class="col-xs-12 col-sm-8">
+             <textarea id="c-shenpiyijian" data-rule="required" class="form-control " rows="5" name="row[proposal]" cols="50">{$proposal}</textarea>
+         </div>
+     </div>
+    <div>
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed data-ajax=1">提交</button>
+        </div>
+    </div>
+</form>

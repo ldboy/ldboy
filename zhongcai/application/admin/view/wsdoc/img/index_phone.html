@@ -1,0 +1,165 @@
+<style>
+    .col-xs-3 {
+        width: 100%;
+    }
+</style>
+
+<div class="panel panel-default panel-intro">
+    {:build_heading()}
+
+    <div class="panel-body">
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade active in" id="one">
+                <div class="widget-body no-padding">
+
+                    <div class="row">
+                        <div class="col-sm-3 no-border">
+
+
+                            <div class="box">
+                                <div class="box-header">
+                                    <h3 class="box-title ">证据信息</h3>
+
+                                </div>
+                                <div class="box-body">
+                                {if condition="$canedit" }
+                                <!-- /.box-header -->
+
+                                    <form id="edit-form"   role="form" data-toggle="validator" method="POST" action="{:url('admin/wsdoc.img/editzj', 'id='.$_GET['docid'], '')}">
+                                        <div class="form-group">
+                                            <label for="c-name5afe3e06420881075"  >证据号:</label>
+                                            <div  >
+                                                  证据{$row.z_no}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="c-name5afe3e06420881075"  >证据名称:</label>
+                                            <div  >
+                                                <input id="c-name5afe3e06420881075" class="form-control" name="row[name]" type="text" value="{$row.name}">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="c-proof" >证明事项:</label>
+                                            <div  >
+                                                <textarea id="c-proof" class="form-control " rows="5" name="row[proof]" cols="50">{$row.proof}</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+
+                                            <div  >
+                                                <button type="submit" class="btn btn-success btn-embossed">保存</button>
+
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                    {else}
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <label for="c-name5afe3e06420881075"  >证据号:</label>
+                                            <div  >
+                                                证据{$row.z_no}
+                                            </div>
+                                        </div>
+                                        <label for="c-name5afe3e064208810751"  >证据名称:</label>
+                                        <div  >
+                                            <input id="c-name5afe3e064208810751" class="form-control" readonly name="row[name]" type="text" value="{$row.name}">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="c-proof1"  >证明事项:</label>
+                                        <div  >
+                                            <textarea id="c-proof1" class="form-control " readonly rows="5" name="row[proof]" cols="50">{$row.proof}</textarea>
+                                        </div>
+                                    </div>
+
+                                    <!--<div class="{if condition="$row.file_type==1"}col-sm-9{else}col-sm-12{/if} no-border">-->
+
+                                    <!--<div class="box">-->
+                                        <div class="box-header">
+                                            <h3 class="box-title ">{if condition="$row.file_type==1"}证据材料{else}{/if}</h3>
+                                            {if condition="$canedit" }
+                                            <div class="box-tools pull-right">
+
+                                                <input id="imgs" data-rule="" class="hidden" name="imgs" type="text" value="">
+                                                <a href="#" id="addimg" class="btn btn-success  plupload" title="{$a_title}" data-input-id="imgs" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp,audio/mpeg,application/zip,video/x-msvideo,video/mp4,mp4,video/x-m4v,m4v,video/x-flv,flv,video/x-ms-wmv,wmv,video/avi,avi,video/webm,webm,video/3gpp,3gpp 3gp,video/3gpp2,3g2,video/vnd.rn-realvideo,rv,video/ogg,ogv,video/x-matroska,mkv,application/pdf,pdf" data-multiple="true"><i class="fa fa-plus"></i> {$a_title}<span
+                                                        class="margin" style="font-size: smaller">支持多选</span></a>
+
+
+
+                                            </div>
+                                            {/if}
+                                        </div>
+                                        <!-- /.box-header -->
+                                        <div class="box-body">
+                                            <div class="row">
+                                                {volist name="list" id="vo"}
+
+                                                <div class="col-xs-3 -align-center">
+
+                                                    <div class="box no-border">
+                                                        <div class="box-body thumbnail">
+                                                            {if condition="$vo.var_type=='mp4'" }
+                                                            <video width="100%" height="300" controls=""
+                                                                   webkit-playsinline="true">
+                                                                <source src="movie.ogg" type="video/ogg">
+                                                                <source src="{$vo.fullurl}" type="video/mp4">
+                                                                <source src="movie.webm" type="video/webm">
+                                                                <object data="{$vo.fullurl}" width="100%" height="200">
+                                                                    <embed width="200" height="200" src="{$vo.fullurl}">
+                                                                </object>
+                                                            </video>
+
+                                                            {elseif condition="$vo.var_type=='png'" }
+
+                                                            <a href="{$vo.fullurl}" class="btn btn-dialog">
+                                                                <img src="{$vo.fullurl}" alt="" style="height: 200px"></a>
+                                                            {elseif condition="$vo.var_type=='pdf'" }
+
+                                                            <a href="{$vo.fullurl}" class="btn btn-dialog">
+                                                                <img src="__CDN__/assets/img/pdf.png" alt=""
+                                                                     style="height: 200px"></a>
+
+
+                                                            {/if}
+                                                            <div class="box-footer">
+
+                                                                {$vo.val_json}
+                                                            </div>
+                                                            {if condition="$canedit" }
+                                                            <div>
+                                                                <a href="{:url('admin/wsdoc.img/shanchu', 'id='.$vo.id.'&docid='.$docid, '')}"
+                                                                   class="btn btn-info btn-xs btn-detail block btn-warning-tip"
+                                                                   data-ajax="1" title="删除"
+
+                                                                >
+                                                                    刪除</a>
+                                                            </div>
+                                                            {/if}
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+
+                                                {/volist}
+                                            </div>
+                                        </div>
+                                    <!--</div>-->
+
+                                {/if}
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

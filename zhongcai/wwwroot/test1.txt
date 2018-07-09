@@ -1,0 +1,1 @@
+<xml><signature><![CDATA[02fee7b03d39b8346380522e4b24aea993557ed9]]></signature><timestamp>1530942593</timestamp><nonce>998922935</nonce><openid><![CDATA[oMW-u0SiYggyLWs-Gs_F25kJ7nCk]]></openid></xml>

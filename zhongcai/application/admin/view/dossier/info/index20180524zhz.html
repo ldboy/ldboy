@@ -1,0 +1,356 @@
+
+<div class="row " >
+
+    <div class="col-xs-2 container-fluid"     >
+        <div class="navbar-static-top"  >
+        <div class="box  box-warning " >
+            <div class="box-header">
+                <h3 class="box-title">资料导航</h3>
+            </div>
+            <div class="box-body">
+
+                <ul class="nav nav-pills nav-stacked " id="ws-tab" style="font-size: larger">
+                    <li class="active"><a href="#">所有资料</a></li>
+                    <li  ><a href="#">案件材料<span class="badge bg-blue pull-right"></span></a></li>
+                    <li><a href="#">当事人<span class="label label-info">{$dsrnum}位</span><span class="badge   pull-right"></span></a></li>
+                    <li><a href="#">答辩申请<span class="label label-info">{$d_num_total}</span><span class="badge bg-red-active  pull-right">{$d_num}</span></a></li>
+                    <li><a href="#">回避/披露/声明<span class="label label-info">{$h_num_total}</span><span class="badge bg-blue pull-right">{$h_num}</span></a></li>
+                    <li><a href="#">质证申请<span class="label label-default">{$q_num_total}</span><span class="badge bg-blue pull-right">{$q_num}</span></a></li>
+                    <li><a href="#">追加证据申请<span class="label label-info">{$dz_num_total}</span><span class="badge bg-blue pull-right">{$dz_num}</span></a></li>
+                    <li><a href="#">日志<span class="label label-info">{$logNum}</span></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="box  box-warning">
+            <div class="box-header">
+                <h3 class="box-title">操作</h3>
+            </div>
+            <div class="box-body">
+
+
+                <div class="col-xs-lg">
+                    {$btnList}
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="col-xs-5" id="ws-body" style="font-size: larger">
+
+        <div class="box box-success">
+            <div class="box-header">
+                <h3 class="box-title">基本资料</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive">
+                <ul class="list-group list-group-unbordered">
+                    <li class="list-group-item">
+                        <b>申请方</b> <a class="pull-right">{$jibenziliao['shenqingr']}</a>
+                    </li>
+                    <li class="list-group-item">
+                        <b>申请时间</b> <a class="pull-right">{$jibenziliao['addtime']}</a>
+                    </li>
+                    <li class="list-group-item">
+                        <b>当前状态</b> <a class="pull-right">{$jibenziliao['status']}</a>
+                    </li>
+                    <li class="list-group-item">
+                        <b>费用</b> <a class="pull-right">{$jibenziliao['money']}</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.box-body -->
+        </div>
+
+        <div class="box box-primary">
+            <div class="box-header">
+                <h3 class="box-title">相关人员</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive no-padding">
+                <table class="table table-hover">
+                    <tbody>
+                    <tr>
+                        <th>姓名/机构名称</th>
+                        <th>身份证/机构组织代码</th>
+                        <th>身份</th>
+                        <th>Email</th>
+                        <th>电话/备注</th>
+                    </tr>
+                    {volist name="dangshiren" id="vo"}
+                    <tr>
+                        <td>{$vo.name}</td>
+                        <td>{$vo.id_num}</td>
+                        <td>
+                            {$vo.role}
+                        </td>
+                        <td>
+                            {$vo.email}
+                        </td>
+                        <td>
+                            {$vo.phone}
+                        </td>
+                    </tr>
+                    {/volist}
+
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.box-body -->
+        </div>
+
+
+
+        <div class="box  box-warning">
+            <div class="box-header">
+                <h3 class="box-title " style="display: block">答辩申请
+                    <!--{$defenceButton}-->
+                    <?php if($defenceButton){ ?>
+                    <a href="{$defenceButton.url}" type="button" class="btn btn-default pull-right btn-large"><i class="fa fa-plus"></i>{$defenceButton.name}</a>
+                    <?php } ?>
+                </h3>
+            </div>
+            <div class="box-body">
+                <table class="table table-hover">
+                    <tbody>
+                    <tr>
+                        <th>答辩人</th>
+                        <th>时间</th>
+                        <th>事项</th>
+                        <th>查看详情</th>
+                    </tr>
+                    {volist name="defenceList" id="vo"}
+                    <tr>
+                        <td>{$vo.real_name}</td>
+                        <td>{$vo.addtime}</td>
+                        <td>{$vo.matter}</td>
+                        <td>
+
+                                {if condition="($vo.status==2) and ($is_zhuban == 1)" }
+                            <a href="{:url('admin/dossier.subinfo/defence',['def_id'=>$vo['id']])}"
+                               class="btn btn-danger btn-xs btn-detail btn-addtabs" title="处理答辩"
+                               data-table-id="table"
+                               data-row-index="0" data-button-index="0">
+                                <i class="fa fa-mouse-pointer"></i>
+                                去处理
+                            </a>
+                                {else}
+                            <a href="{:url('admin/dossier.subinfo/defence',['def_id'=>$vo['id']])}"
+                               class="btn btn-info btn-xs btn-detail btn-addtabs" title="查看答辩详情"
+
+                                >
+                                <i class="fa fa-list"></i>
+                                详情
+                            </a>
+                                {/if}
+
+
+                        </td>
+                    </tr>
+                    {/volist}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+
+        <div class="box  box-warning">
+            <div class="box-header">
+                <h3 class="box-title">仲裁员</h3>
+            </div>
+            <div class="box-body">
+
+                <table class="table table-hover">
+                    <tbody>
+                    <tr>
+                        <th>姓名：{$zhongcaiyuan['name']}</th>
+                        <!--<th>身份证</th>
+                        <th>申请回避</th>-->
+                    </tr>
+
+
+                    </tbody>
+                </table>
+                <div class="layui-layer-title no-padding">披露/申明/回避列表</div>
+                <table class="table table-hover">
+                    <tbody>
+                    <tr>
+                        <th>申请人</th>
+                        <th>类型</th>
+                        <th>角色</th>
+                        <th>状态</th>
+                        <th>申请时间</th>
+                        <th>查看详情</th>
+                    </tr>
+                    {volist name="piluHuibi" id="vo"}
+                    <tr>
+                        <td>{$vo.real_name}</td>
+                        <td>{$vo.typeStr}</td>
+                        <td>{$vo.role}</td>
+                        <td>{$vo.statusStr}</td>
+                        <td>{$vo.addtime}</td>
+                        <td>
+
+
+                            {if condition="($vo.status==2) and ($is_zhuban == 1)" }
+                            <a href="{:url('dossier.subinfo/piluhuibi',['m_id'=>$vo['id'],'gid'=>$vo['gid']])}"
+                               class="btn btn-danger btn-xs btn-detail btn-addtabs" title="处理"
+                               data-table-id="table"
+                               data-row-index="0" data-button-index="0">
+                                <i class="fa fa-mouse-pointer"></i>
+                                去处理
+                            </a>
+                            {else}
+                            <a href="{:url('dossier.subinfo/piluhuibi',['m_id'=>$vo['id'],'gid'=>$vo['gid']])}"
+                               class="btn btn-info btn-xs btn-detail btn-addtabs" title="查看详情"
+
+                            >
+                                <i class="fa fa-mouse-pointer"></i>
+                                详情
+                            </a>
+                            {/if}
+
+                        </td>
+                    </tr>
+                    {/volist}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        
+        <div class="box  box-warning">
+            <div class="box-header">
+                <h3 class="box-title " style="display: block">质证申请
+                    <?php if($questionButton){ ?>
+                    <a href="{$questionButton.url}" type="button" class="btn btn-default pull-right btn-large"><i class="fa fa-plus"></i>{$questionButton.name}</a>
+                    <?php } ?>
+                </h3>
+
+            </div>
+            <div class="box-body">
+                <table class="table table-hover">
+                    <tbody>
+                    <tr>
+                        <th>质证人</th>
+                        <th>质证时间</th>
+                        <th>类型</th>
+                        <th>查看详情</th>
+                    </tr>
+                    {volist name="questionList" id="vo"}
+                    <tr>
+                        <td>{$vo.real_name}</td>
+                        <td>{$vo.addtime}</td>
+                        <td>{$vo.role}</td>
+                        <td>
+
+
+                            {if condition="($vo.status_int==2)  and ($is_zhuban == 1)" }
+                            <a href="{:url('admin/dossier.subinfo/question',['qid'=>$vo['id']])}" class="btn btn-danger btn-xs btn-detail btn-addtabs" title="处理质证" data-table-id="table" data-row-index="0" data-button-index="0">
+                                <i class="fa fa-mouse-pointer"></i>
+                                去处理
+                            </a>
+                            {else}
+                            <a href="{:url('admin/dossier.subinfo/question',['qid'=>$vo['id']])}" class="btn btn-info btn-xs btn-detail btn-addtabs" title="查看质证详情">
+                                <i class="fa fa-list"></i>
+                                详情
+                            </a>
+                            {/if}
+
+                        </td>
+                    </tr>
+                    {/volist}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        <div class="box  box-warning">
+            <div class="box-header">
+                <h3 class="box-title">追加证据申请</h3>
+            </div>
+            <div class="box-body">
+                <table class="table table-hover">
+                    <tbody>
+                    <tr>
+                        <th>证据名称</th>
+                        <th>证明事项</th>
+                        <th>提交时间</th>
+                        <th>提交人</th>
+                        <th>查看详情</th>
+                    </tr>
+                    {volist name="zhengJuList" id="vo"}
+                    <tr>
+                        <td>{$vo.name}</td>
+                        <td>{$vo.value}</td>
+                        <td>{$vo.addtime}</td>
+                        <td>{$vo.phone}</td>
+                        <td>
+
+
+
+                            {if condition="($vo.status==2) and ($is_zhuban == 1)" }
+                            <a href="{:url('admin/dossier.subinfo/zhengju',['zid'=>$vo['id']])}"
+                               class="btn btn-danger btn-xs btn-detail btn-addtabs" title="处理追加证据申请"
+                               data-table-id="table"
+                               data-row-index="0" data-button-index="0">
+                                <i class="fa fa-mouse-pointer"></i>
+                                去处理
+                            </a>
+                            {else}
+                            <a href="{:url('admin/dossier.subinfo/zhengju',['zid'=>$vo['id']])}"
+                               class="btn btn-info btn-xs btn-detail btn-addtabs" title="查看追加证据申请详情"
+
+                            >
+                                <i class="fa fa-list"></i>
+                                详情
+                            </a>
+                            {/if}
+                        </td>
+                    </tr>
+                    {/volist}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        <div class="box  box-warning">
+            <div class="box-header">
+                <h3 class="box-title">操作记录</h3>
+            </div>
+            <div class="box-body">
+                <table class="table table-hover">
+                    <tbody>
+                    <tr>
+                        <th>操作人</th>
+                        <th>操作时间</th>
+                        <th>操作事项</th>
+                    </tr>
+                    {volist name="logList" id="vo"}
+                    <tr>
+                        <td>{$vo.name}</td>
+                        <td>{$vo.addtime}</td>
+                        <td>{$vo.remark}</td>
+                    </tr>
+                    {/volist}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-xs-5"  style="font-size: larger">
+    {$filehtml}
+    </div>
+</div>
+</div>
+
+
+
+ 

@@ -1,0 +1,25 @@
+<div class="box-body table-responsive">
+    <table class="table table-hover">
+        <tbody>
+        <tr>
+
+            <th>文件名称</th>
+            <th>时间</th>
+            <th>操作</th>
+        </tr>
+        {volist name="tableContent" id="vo"}
+        <tr>
+           
+            <td>{$vo.title}</td>
+            <td>{$vo.addtime}</td>
+            <td>
+                <a href="{:url('wsdoc.img/index',['docid'=>$vo['evidence_id']])}"
+                   class="btn btn-info btn-xs btn-detail btn-dialog" title="查看" data-table-id="table"
+                   data-row-index="0" data-button-index="0"><i class="fa fa-list"></i>
+                    查看</a>
+            </td>
+        </tr>
+        {/volist}
+        </tbody>
+    </table>
+</div>

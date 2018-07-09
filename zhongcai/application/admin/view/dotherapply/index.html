@@ -1,0 +1,39 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label for="c-matter" class="control-label col-xs-12 col-sm-2">请选择申请类型:</label>
+        <div class="col-xs-12 col-sm-8">
+            <?php  $matterlist=  json_decode('{"1":"\u7533\u8bf7\u8c03\u89e3","2":"\u7533\u8bf7\u4e2d\u6b62","3":"\u7533\u8bf7\u9274\u5b9a","4":"\u5176\u4ed6"}',true);   ?>
+            <div class="radio">
+            {foreach name="$matterlist" item="vo"}
+            <label for="row[matter]-{$key}"><input onclick="aa();" id="row[matter]-{$key}" name="row[type]" type="radio" value="{$key}" {if condition="$key eq 1"}checked{/if} /> {$vo}</label>
+            {/foreach}
+            </div>
+        </div>
+    </div>
+    <div id="cont" class="form-group" style="display: none;">
+        <label for="c-matter" class="control-label col-xs-12 col-sm-2">请填写具体申请内容:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-matter"  class="form-control"  rows="5" name="row[cont]" cols="50">{$row.cont}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed">{:__('OK')}</button>
+             
+        </div>
+    </div>
+</form>
+<script type="text/javascript">
+    function aa(){
+        var val=$('input:radio[name="row[type]"]:checked').val();
+        if(val==4){
+            $('#cont').show();
+            $('#c-matter').attr('data-rule','require');
+        }else {
+            $('#cont').hide();
+            $('#c-matter').removeAttr('data-rule');
+        }
+    }
+</script>

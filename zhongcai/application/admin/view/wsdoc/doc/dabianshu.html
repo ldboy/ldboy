@@ -1,0 +1,30 @@
+<?php
+    $d['defence']['this']['matter'] = nl2br($d['defence']['this']['matter']);
+?>
+<div class="xywrap">
+    <section class="title_one">仲裁答辩书</section>
+    <div class="main_info margintop">
+        <p>答&nbsp;&nbsp;辩&nbsp;&nbsp;人：<span>{$d.users.me.name}  {$d.users.me.sex}  {$d.users.me.nation}  {$d.users.me.birthday}</span></p>
+        <p>住&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所：<span>{$d.users.me.address}</span></p>
+        <p>联 系 方式：<span>{$d.users.me.phone}</span></p>
+
+        <?php if($d['users']['me']['type'] == 2){ ?><p>法定代表人：<span>{$d.users.me.f_name}</span></p><?php } ?>
+        <p>被 答 辩人：<span>{$d.users.role.1.0.name}</span></p>
+        <p>住&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所：<span>{$d.users.role.1.0.address}</span></p>
+        <p>法定代表人：<span>{$d.users.role.1.0.f_name}  {$d.users.role.1.0.job}</span></p>
+    </div>
+    <div class="content con">
+        <p class="kongtwo">答辩人就{$d.info.zno_str}仲裁纠纷一案，现发表如下答辩意见：</p>
+        <p >{$d.defence.this.matter}</p>
+    </div>
+    <div class="xeiyibtm1 clearfix">
+        <p class="kongtwo">此致</p>
+        <p>{$d.jigou.info.name}</p>
+    </div>
+    <div class="clearfix"></div>
+    <div class="signbtm">
+        <div class="sign2">答辩人：<span style="color:#ffffff;margin-left:15px;">{$d.sign.imgs.0}</span></div>
+        <div class="tt">日期：{$d.sign.time.string}</div>
+    </div>
+    <div style="clear:both;"></div>
+</div>

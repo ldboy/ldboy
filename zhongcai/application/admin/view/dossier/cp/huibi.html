@@ -1,0 +1,70 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">
+            <input type="hidden" name="" /></label>
+        <div class="col-lg-6">
+            <div class="input-group">
+                <p>请勾选回避理由</p>
+                <!--<input class="form-control " readonly   name="" cols="100">请勾选回避理由</input>-->
+            </div>
+        </div>
+    </div>
+        <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">
+            <input type="checkbox" data-rule="required" name="liyou_box[0]" /></label>
+        <div class="col-lg-6">
+            <div class="input-group">
+                <textarea class="form-control " readonly   name="liyou[]" cols="100">仲裁员与本案当事人、代理人是近亲属关系</textarea>
+            </div>
+        </div>
+    </div>
+            <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">
+            <input type="checkbox" data-rule="required" name="liyou_box[1]" /></label>
+        <div class="col-lg-6">
+            <div class="input-group">
+                <textarea class="form-control " readonly   name="liyou[]" cols="100">仲裁员与本案当事人、代理人有其他关系可能影响公正仲裁</textarea>
+            </div>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">
+            <input type="checkbox" data-rule="required" name="liyou_box[2]"  /></label>
+        <div class="col-lg-6">
+
+            <div class="input-group">
+                <textarea class="form-control "  readonly   name="liyou[]" cols="100">仲裁员与本案有利害关系</textarea>
+            </div>
+
+        </div>
+    </div>
+        <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">
+            <input type="checkbox" data-rule="required" name="liyou_box[3]"  /></label>
+        <div class="col-lg-6">
+
+            <div class="input-group">
+                <textarea class="form-control "  readonly   name="liyou[]" cols="100">仲裁员私自会见当事人、代理人或接受当事人、代理人请客送礼</textarea>
+            </div>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">其它:</label>
+        <div class="col-lg-6">
+            <div class="input-group">
+                <textarea class="form-control " rows="5" name="liyou[]" cols="100">{$row.pl_value}</textarea>
+            </div>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

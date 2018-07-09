@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="{:url('Defence/add')}">
+<h1>答辩书</h1>
+<h3>仲裁答辩书</h3> <br>
+<h4>答辩人 ：</h4>
+{foreach $dbr as $vo}
+<p>姓名：{$vo.name}</p>
+<p>证件号：{$vo.id_num}</p>
+<p>电话：{$vo.phone}</p>
+<p>地址：{$vo.address}</p>
+<?php if(isset($vo['f_name'])){ ?>
+<p>法人信息</p>
+<p>姓名：{$vo.f_name}</p>
+<p>证件号：{$vo.f_id_card}</p>
+<p>地址：{$vo.f_phone}</p>
+<?php } ?>
+{/foreach}
+<h4>被答辩人 ：</h4>
+{foreach $dbr as $vo}
+<p>姓名：{$vo.name}</p>
+<p>证件号：{$vo.id_num}</p>
+<p>电话：{$vo.phone}</p>
+<p>地址：{$vo.address}</p>
+<?php if(isset($vo['f_name'])){ ?>
+<p>法人信息</p>
+<p>姓名：{$vo.f_name}</p>
+<p>证件号：{$vo.f_id_card}</p>
+<p>地址：{$vo.f_phone}</p>
+<?php } ?>
+{/foreach}
+    <input type="hidden" value="{$dossier_id}" name="dossier_id" />
+<h4>答辩事项</h4>
+     <textarea name="shixiang">
+
+        </textarea>
+<h4>事实与理由</h4>
+   <textarea name="reason">
+
+    </textarea>
+    此致
+<br>
+石家庄仲裁委员会
+<br>
+答辩人：（签字或盖章）
+<br>
+<!--年   月   日-->
+{$date}
+</form>
+</body>
+</html>

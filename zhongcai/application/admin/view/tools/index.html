@@ -1,0 +1,105 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="layui-layer-title" >基本信息</div>
+
+    <div class="panel panel-default panel-intro panel-body">
+        <div class="form-group">
+            <label for="c-xingming" class="control-label col-xs-12 col-sm-2">姓名:</label>
+            <div class="col-xs-12 col-sm-8">
+                <input id="c-xingming" class="form-control" name="row[xingming]" type="text" value="{$row.xingming}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="c-xingming22" class="control-label col-xs-12 col-sm-2">姓名333:</label>
+            <div class="col-xs-12 col-sm-8">
+                <?php  $xingming22list=  json_decode('{"1":"\u4e0d\u932f","2":"\u53ef\u4ee5"}',true);   ?>
+                <div class="radio">
+                    {foreach name="$xingming22list" item="vo"}
+                    <label for="row[xingming22]-{$key}"><input id="row[xingming22]-{$key}" name="row[xingming22]" type="radio" value="{$key}" {in name="key" value="$row.xingming22"}checked{/in} /> {$vo}</label>
+                    {/foreach}
+                </div>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="c-diqu" class="control-label col-xs-12 col-sm-2">地区:</label>
+            <div class="col-xs-12 col-sm-8">
+                <div class='control-relative '><input id="c-diqu" class="form-control"  data-toggle="city-picker" name="row[diqu]" type="text" value="{$row.diqu}"></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="c-jianjie" class="control-label col-xs-12 col-sm-2">简介:</label>
+            <div class="col-xs-12 col-sm-8">
+                <textarea id="c-jianjie" data-rule="required" class="form-control " rows="5" name="row[jianjie]" cols="50">{$row.jianjie}</textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="c-neirong" class="control-label col-xs-12 col-sm-2">内容:</label>
+            <div class="col-xs-12 col-sm-8">
+                <textarea id="c-neirong" data-rule="required" class="form-control editor" rows="5" name="row[neirong]" cols="50">{$row.neirong}</textarea>
+            </div>
+        </div>
+    </div>
+<div>
+
+    <div class="layui-layer-title" >附件列表</div>
+
+    <div class="panel panel-default panel-intro panel-body">
+<?php for($__index=0;$__index<$fujiannum ;$__index++) {  ?>
+    <div class="form-group">
+        <label for="c-img" class="control-label col-xs-12 col-sm-2">图片:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-img" data-rule="required" class="form-control" size="50" name="row[img][]" type="" value="{$row.img[$__index]}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-img" class="btn btn-danger plupload" data-input-id="c-img" data-multiple="false"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-img" class="btn btn-primary fachoose" data-input-id="c-img" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-img"></span>
+            </div>
+            
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-neirong2dd" class="control-label col-xs-12 col-sm-2">附件时间:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-neirong2dd" class="form-control" name="row[neirong2dd][]" type="text" value="{$row.neirong2dd[$__index]}">
+        </div>
+    </div>
+
+<?php } ?>
+
+    <div class="form-group layer-footer panel-body"><label class="control-label col-xs-12 col-sm-2"></label><a href="javascript:;" class="btn btn-sm btn-success btn-append"><i class="fa fa-plus"></i> 追加</a></div>
+    </div>
+</div>
+<div>
+    <div class="layui-layer-title" >申请人详情</div>
+<div class="panel panel-default panel-intro  panel-body">
+    <div class="form-group">
+        <label for="c-youxiao" class="control-label col-xs-12 col-sm-2">是否有效:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input checked="" id="c-youxiao" name="row[youxiao]" type="hidden" value=""><label for="row[youxiao]-switch" class="control-label"><input id="row[youxiao]-switch" name="row[youxiao]" type="checkbox" {in name="$row.youxiao" value="Y"}checked{/in} value="Y"> {:__('Yes')}</label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-xiai" class="control-label col-xs-12 col-sm-2">喜爱:</label>
+        <div class="col-xs-12 col-sm-8">
+                        
+            <select  id="c-xiai" data-rule="required" class="form-control selectpicker" name="row[xiai]">
+                {foreach name="$xiailist" item="vo"}
+                    <option value="{$key}" {in name="key" value="$row.xiai"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+</div>
+</div>
+    <div class="form-group layer-footer panel-body">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

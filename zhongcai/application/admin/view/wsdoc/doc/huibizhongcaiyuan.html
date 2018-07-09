@@ -1,0 +1,25 @@
+<div class="xywrap">
+    <section class="title1">回避申请书</section>
+    <div class="main_info margintop">
+        <p>申 请 人：<span>{$d.users.role.1.0.name}</span></p>
+        <p>被申请人：<span>{$d.users.role.2.0.bei_apply_peo}</span></p>
+    </div>
+    <div class="content con">
+        <p class="kongtwo">申请人与被申请人因{$d.info.title}纠纷的{$d.info.zno_str}案，本会主任已指定{$d.jigou.arbitrator.0.name}为本案仲裁员，因{$d.dvalue.this.uniquevalue.huibi_value}。根据《仲裁规则》第25条之规定，现申请仲裁员{$d.jigou.arbitrator.0.name}回避，请予以批准。</p>
+        <br/>
+        <br/>
+        <p class="kongtwo"><span>此致</span></p>
+        <p><span>{$d.jigou.info.name}</span></p>
+    </div>
+    <div class="clearfix"></div>
+    <div class="signbtm">
+        {if($d.thisHuibiYwUserRole==2)}
+        <div class="sign2">被申请人：&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ffffff;margin-left:15px;">{$d.uniquevalue.signer_code}</span></div>
+        {else /}
+        <div class="sign1">申请人：&nbsp;&nbsp;&nbsp;&nbsp;<span>{$d.users.role.1.0.name}</span></div>
+        <div class="sign2">申请人代理人：&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ffffff;margin-left:15px;">{$d.uniquevalue.signer_code}</span></div>
+        {/if}
+        <div class="tt">日期：{$d.sign.time.string}</div>
+    </div>
+    <div style="clear:both;"></div>
+</div>

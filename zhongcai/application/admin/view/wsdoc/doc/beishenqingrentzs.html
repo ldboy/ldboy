@@ -1,0 +1,29 @@
+<style>
+.mydiv{
+    margin:0 auto;
+    width:650px;
+}
+    .xywrap{width:650px; height: 978px}
+</style>
+<div class="xywrap">
+
+    <b>仲裁通知书（被申请人）</b>
+    <h1 style="text-align: center">石家庄仲裁委员会</h1>
+    <br>
+    <h2 style="text-align: center">仲裁通知书（二）</h2>
+    <br>
+    <div class="mydiv">
+        <p>{$d.users.role.1.0.bei_apply_peo}：</p>
+        <p>申请人{$d.users.role.1.0.name}与你（你单位）{$d.info.zno_str}</p><br>
+        <p>因{$info.title}纠纷向本会提出仲裁申请，经审查符合法律规定的受理条件，本会已决定受理此案。现将有关事项通知如下：</p><br>
+        <p>一、你方应在收到本通知书之日起15（5）日内向本会提交：</p><br>
+        <p>1、答辩书，不按期提交答辩书的，不影响案件的审理；如有反请求，也应在此期间内提出。</p><br>
+        <p>2、营业执照副本复印件（自然人为身份证复印件）。</p><br>
+        <p>3、相关证据材料一式五（三）份，如对方当事人是两人以上的，请增加相应份数。</p><br>
+        <p>二、请于收到本通知书之日起10（5）日内，按照《石家庄仲裁委员会仲裁规则》的规定，在《石家庄仲裁委员会仲裁员名册》中选定仲裁员，并书面通知本会。逾期，将由本会主任指定。　</p><br>
+        <p class="date"><?php echo date("Y年m月d日",$d[info][addtime]) ?> </p>
+    </div>
+    <br>
+
+
+</div>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>答辩</title>
+    <style>
+        .quit_btn1{
+
+            border:1px solid green;
+            border-radius:5px;
+            color: #000000;
+            font-size: 15px;
+            padding:0 10px;
+            display: block;
+            text-align: center;
+            line-height:38px;
+            margin:8px auto 4px;
+
+        }
+        .current_location_zhz  { font-size: 18px;color: #3c8dbc}
+        .mall_main .address_list .list_left{
+            border: none;
+        }
+        .mall_main .address_list{
+            padding: 3% 3% 3%;
+        }
+        .mall_main  .pw2 span{
+            float: right;
+        }
+        .mall_main .address_list .list_left .pw2{
+            width: 100%
+        }
+        #child_header{ position: relative; }
+        .mall_main .current_location{ width: 100%; height: 100%; text-align: center; }
+        .mall_main #child_header .current_location span{ float: none; }
+        #child_header .goback{position: absolute; left: 4%; z-index: 10;}
+    </style>
+    <link rel="stylesheet" href="__CDN__/assets/css/wechat/mall.css" type="text/css" />
+</head>
+<body>
+<div class="mall_main">
+    <div id="child_header">
+        <div class="goback"><a href="http://zcw.wszx.cc/admin/wechat/myinfo/daohang?idid={$idid}&did={$did}"><i></i></a></div>
+        <div class="current_location"><span>答辩列表</span></div>
+    </div>
+
+    {if $defenceList}
+        {foreach name="defenceList" item="vo"}
+
+        <div class="address_list clearfix">
+            <div class="list_left clearfix">
+                <div class="pw2">
+                    <p ><b>答辩人<span>{$vo.real_name}</span></b></p>
+                    <p >答辩时间<span>{$vo.addtime}</span></p>
+                    <p>事项<span>{$vo.matter}</span></p>
+                    <p>理由<span>{$vo.reason}</span></p>
+                    {if  $zhuban}
+                    <p>详情<span><a style="color: #0a6aa1" target="_blank" href="{$vo.link}">查看</a></span></p>
+                    {/if}
+                </div>
+            </div>
+        </div>
+
+        <br>
+        {/foreach}
+    <span  style="color: green; display:block; line-height: 40px; height: 40px; margin: 0 auto; text-align: center">----以上为所有的答辩信息----</span>
+    {else}
+        <div style="text-align: center ; color: green; margin-top: 50px"> 暂无数据 </div>
+    {/if}
+
+</div>
+
+<script>
+    function zhiding(url){
+        var tmp =window.confirm('确定要提交吗');
+        if(tmp == true){
+            window.location.href=url;
+        }
+
+    }
+</script>
+</body>
+</html>

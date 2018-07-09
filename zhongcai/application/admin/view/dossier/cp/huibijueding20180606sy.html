@@ -1,0 +1,56 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+    <input type="hidden" name="row[qid]" value="{$qid}" />
+    {if condition="$isZhongCaiWei"}
+        {if condition="$status eq 2"}
+        <div class="form-group">
+            <label for="c-shenpiyijian" class="control-label col-xs-12 col-sm-2">主办决定意见:</label>
+            <div class="col-xs-12 col-sm-8">
+                <textarea id="c-shenpiyijian" data-rule="required" class="form-control " rows="5" name="row[jdyijian]" cols="50">{$jdyijian}</textarea>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="c-zhurenshenpiyijian_view" class="control-label col-xs-12 col-sm-2">主任决定意见:</label>
+            <div class="col-xs-12 col-sm-8">
+                <textarea id="c-zhurenshenpiyijian_view"  class="form-control" readonly rows="5" name="row[zhurenjdyijian]" cols="50">{$zhurenjdyijian}</textarea>
+
+            </div>
+        </div>
+
+        <div>
+            <label class="control-label col-xs-12 col-sm-2"></label>
+            <div class="col-xs-12 col-sm-8">
+                <button type="submit" class="btn btn-success btn-embossed">下一步</button>
+            </div>
+        </div>
+
+        {elseif condition="$status eq 5" /}
+        <div class="form-group">
+            <label for="c-shenpiyijian_view" class="control-label col-xs-12 col-sm-2">主办决定意见:</label>
+            <div class="col-xs-12 col-sm-8">
+                <textarea id="c-shenpiyijian_view"  class="form-control " readonly rows="5" name="row[jdyijian]" cols="50">{$jdyijian}</textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="c-zhurenshenpiyijian" class="control-label col-xs-12 col-sm-2">主任决定意见:</label>
+            <div class="col-xs-12 col-sm-8">
+                <textarea id="c-zhurenshenpiyijian" data-rule="required"  class="form-control"  rows="5" name="row[zhurenjdyijian]" cols="50">{$zhurenjdyijian}</textarea>
+            </div>
+        </div>
+
+        <div class="radio">
+
+            <label for="row[ok]-1"><input id="row[ok]-1" name="row[ok]" type="radio" value="1" checked  /> 通过</label>
+            <label for="row[ok]-0"><input id="row[ok]-0" name="row[ok]" type="radio" value="0"   /> 不通过</label>
+
+        </div>
+
+        <div>
+            <label class="control-label col-xs-12 col-sm-2"></label>
+            <div class="col-xs-12 col-sm-8">
+                <button type="submit" class="btn btn-success btn-embossed">审批</button>
+            </div>
+        </div>
+        {/if}
+    {/if}
+</form>

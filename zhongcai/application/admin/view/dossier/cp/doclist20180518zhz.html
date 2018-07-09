@@ -1,0 +1,142 @@
+
+<div class="row">
+    <div class="col-xs-12">
+
+        {volist name="list" id="item"}
+
+        <div class="box box-{$item.style}">
+
+            <div class="box-header">
+                <h3 class="box-title">{$item.title}</h3>
+                {if $item.list}
+                <a onclick="addZhengJu()" href="javascript:void(0);" class="btn   btn-md btn-default pull-right" title="添加证据" data-table-id="table" data-row-index="0" data-button-index="0"><i class="fa fa-plus"></i>添加证据</a>
+                {/if}
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive">
+                <table class="table table-hover">
+                    <tbody>
+                    <tr>
+                        <th>文件ID</th>
+                        <th>文件名称</th>
+                        <th>备注</th>
+                        <th>提供者</th>
+                        <th>操作</th>
+
+                    </tr>
+                    {volist name="$item.list" id="vo"}
+                    <tr>
+                        <td>{$vo.id}</td>
+                        <td>{$vo.name}</td>
+                        <td>{$vo.desc}</td>
+                        <td>{$vo.u_name}</td>
+
+                        <td>
+                            <?php if($vo['show_look']==1):?>
+                            <a href="{:url('admin/wsdoc.show/index', 'view_pdf=1&docid='.$vo.id, '')}"
+                               class="btn btn-info btn-xs btn-detail btn-dialog" title="查看" data-table-id="table"
+                               data-row-index="0" data-button-index="0"><i class="fa fa-list"></i>
+                                查看</a>
+                            <?php endif;?>
+
+                            <?php if( $vo['show_sign']==1):?>
+                            <a href="javascript:;"
+                               class="btn btn-info btn-xs btn-detail bg-purple bt-gotosign" data-docid="{$vo['id']}"
+                               title="去签字"
+                               data-table-id="table"
+                               data-row-index="0" data-button-index="0"><i class="fa fa-paint-brush"></i>
+                                签字</a>
+                            <?php elseif( $vo['show_sign']==2):?>
+                            <a
+                               class="btn btn-default btn-xs btn-detail" data-docid=""
+                               title="已签字"
+                               data-table-id="table"
+                               data-row-index="0" data-button-index="0"><i class="fa fa-paint-brush"></i>
+                                已签字</a>
+                            <?php endif;?>
+
+
+                            <?php if($vo['show_fj']==1):?>
+                            <a href="{:url('admin/wsdoc.img/index', 'edit=1&docid='.$vo.id, '')}"
+                               class="btn btn-info btn-xs btn-detail btn-dialog bg-purple" title="{$vo.name}"
+                               data-table-id="table"
+                               data-row-index="0" data-button-index="0"><i class="fa fa-list"></i>
+                                附件管理</a>
+                            <?php endif;?>
+
+                        </td>
+
+                    </tr>
+
+
+                    {/volist}
+
+                    </tbody>
+                </table>
+
+
+            </div>
+
+            <!-- /.box-body -->
+        </div>
+
+        <!-- /.box -->
+        {/volist}
+    </div>
+</div>
+
+
+<div>
+
+    <label class="control-label col-xs-12 col-sm-2"></label>
+    <div class="col-xs-12 col-sm-8">
+
+        {if condition="$can_submit" }
+        <a href="{:url('admin/dossier.cp/dmp', 'id='.$Think.get.id.'&gid='.$Think.get.gid.'&exid='.$Think.get.exid, '')}"
+           data-title="提示" data-tip="{$btninfo.btn_tip}" class="btn btn-success btn-lg btn-warning-tip" data-ajax="1">{$btninfo.btn_title}</a>
+        {else}
+        <a href="#"
+           data-title="提示" data-tip="{$btninfo.btn_tip}" class="btn btn-success btn-lg  disabled">{$btninfo.btn_title}</a>
+        {/if}
+
+    </div>
+
+</div>
+<script>
+
+    layer.prompt({title: '请输入数据', formType: 1,
+        // 这个是确定按钮的事件
+        "success":function(){
+            // 键盘事件，判断回车
+            $("input.layui-layer-input").on('keydown',function(e){
+                if (e.which == 13) {
+                    // 取输入框数据 和123456 比较
+                    if($(this).val()){
+                        alert('你点击了回车按钮！');
+                        layer.close(1);
+                    }
+                }
+            });
+        },
+        // 点击确定按钮事件
+        yes : function(){
+            // 取输入框数据
+            var pass =$(document.getElementsByClassName('layui-layer-input')[0]).val();
+            if(pass){
+                alert('你点击了确定按钮!');s
+                layer.close(1);
+            }
+        }
+    });
+
+    function addZhengJu(){
+        var tmp =window.prompt('请输入证据名称','请输入证据名称！');
+        if(!tmp){
+            return false;
+        }
+
+//        window.location.href= "{:url('dossier.cp/addElseZJ')}?id=$d_id&gid=$gid&exid=$exid&name="+tmp;
+        window.location.href= "{:url('dossier.cp/addElseZJ')}?id={$d_id}&gid={$gid}&exid={$exid}&name="+tmp;
+    }
+</script>
+

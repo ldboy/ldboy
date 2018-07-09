@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文档列表</title>
+</head>
+<body>
+<div>
+    <div class="panel panel-default panel-intro">
+        {:build_heading()}
+
+        <div class="panel-body">
+            <div id="myTabContent" class="tab-content">
+                <div class="tab-pane fade active in" id="one">
+                    <div class="widget-body no-padding">
+
+                        <table id="table" class="table table-striped table-bordered table-hover" data-operate-edit="1" data-operate-del="1" width="100%">
+                            <thead>
+                            <tr>
+
+                                <th style="text-align: center; vertical-align: middle; " data-field="model_name"><div class="th-inner ">模板名称</div><div class="fht-cell"></div></th>
+                                <th style="text-align: center; vertical-align: middle; " data-field="operate"><div class="th-inner ">操作</div><div class="fht-cell"></div></th>
+                            </tr>
+                            </thead>
+                            <tbody data-listidx="0">
+                            {volist name="list" id="vo"}
+                            <tr data-index="0">
+
+                                <td style="text-align: center; vertical-align: middle; ">{$vo['name']}</td>
+                                <td style="text-align: center; vertical-align: middle; ">
+                                    <?php if($vo['editUrl']):?><a href="{$vo['editUrl']}" class="btn btn-xs btn-success btn-editone" title="编辑" data-table-id="table" data-field-index="3" data-row-index="0" data-button-index="1"><i class="fa fa-pencil"></i></a><?php endif;?>
+                                    <?php if($vo['signUrl']):?><a href="{$vo['signUrl']}" class="btn btn-xs btn-danger btn-delone" title="签字" data-table-id="table" data-field-index="3" data-row-index="0" data-button-index="2"><i class="fa fa-edit"></i></a><?php endif;?>
+                                    <?php if($vo['uploadUrl']):?><a href="{$vo['uploadUrl']}" class="btn btn-xs btn-danger btn-delone" title="上传" data-table-id="table" data-field-index="3" data-row-index="0" data-button-index="2"><i class="fa fa-folder-open"></i></a><?php endif;?>
+                                </td> </tr>
+                            {/volist}
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="layer-footer">
+                <label class="control-label col-xs-12 col-sm-2"></label>
+                <div class="col-xs-12 col-sm-8">
+                    <button type="submit" class="btn btn-success btn-embossed">{:__('OK')}</button>
+                    <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

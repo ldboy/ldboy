@@ -1,0 +1,44 @@
+<?php
+    $d['info']['request'] = nl2br($d['info']['request']);
+    str_replace('\n','<br>',$d['info']['request']);
+?>
+<div class="xywrap">
+    <section class="title_one">仲裁申请书</section>
+    <div class="main_info margintop">
+        <p>申&nbsp;&nbsp;&nbsp;请&nbsp;&nbsp;&nbsp;人：<span>{$d.users.role.1.0.name}</span></p>
+        <p>住 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所：<span>{$d.users.role.1.0.address}</span></p>
+        <?php if($d['users']['role'][1][0]['type'] == 2){ ?>
+        <p>法定 代 表人：<span>{$d.users.role.1.0.f_name}</span></p>
+        <?php } ?>
+        <?php foreach($d[users][role][2] as $ke=>$value){ ?>
+        <?php if($value['type'] == 2){ ?>
+        <p>{if(count($d[users][role][2])!=1)}第{$value.Num}{/if}被申请人：<span><?php echo $value['html_show']; ?></span></p>
+        <p>住 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所：<span><?php echo $value['address']; ?></span></p>
+        <?php }else{ ?>
+        <p>{if(count($d[users][role][2])!=1)}第{$value.Num}{/if}被申请人：<span>{$value.name}  {$value.sex}  {$value.nation}  {$value.birthday}</span></p>
+        <p>住 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所：<span><?php echo $value['address'] ?></span></p>
+        <?php } ?>
+        <!--<p><span class="fb">住所：</span><?php echo $value['address'] ?></p>
+        <p><span class="fb">身份证号：</span><?php echo $value['id_num'] ?></p>
+        <?php if($value['type'] == 2){ ?> <p><span class="fb">法定代表人：</span></p> <?php } ?>
+        <p><?php echo $value['f_name'] ?></p>-->
+        <?php } ?>
+    </div>
+    <div class="content con">
+        <div class="newtitle">请求事项</div>
+        <p>{$d.info.request}</p>
+        <div class="newtitle">事实与理由</div>
+        <p> {$d.info.reasons}</p>
+    </div>
+    <div class="xeiyibtm1 clearfix">
+        <p class="kongtwo">此致</p>
+        <p>{$d.jigou.info.name}</p>
+    </div>
+    <div class="clearfix"></div>
+    <div class="signbtm">
+       <div class="sign1">申请人：<span><?php echo $d['users']['role'][1][0]['name'] ?></span></div>
+       <div class="sign2">申请人代理人：<span style="color:#ffffff">{$d.uniquevalue.signer_code}</span></div>
+       <div class="tt">日期：{$d.sign.time.string}</div>
+    </div>
+    <div style="clear:both;"></div>
+</div>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<div class="box  box-warning">
+    <div class="box-header">
+        <h3 class="box-title">操作</h3>
+    </div>
+    <div class="box-body">
+
+
+        <div class="col-xs-12">
+
+            <!--<a href="{:url('dossier.cp/doclist',['id'=>$d_id,'gid'=>2])}" class="btn btn-yahoo">受理</a>-->
+            <a href="{:url('receive/index',['id'=>$d_id])}" class="btn btn-yahoo">受理</a>
+            <button type="button" class="btn btn-warning">拒绝</button>
+            <a href="{:url('dossier.cp/defence',['dossier_id'=>$d_id])}" class="btn btn-success btn-add btn-dialog">答辩</a>
+            <a href="{:url('applydoc/apply',['dossier_id'=>$d_id])}" class="btn btn-yahoo">申请</a>
+            <button type="button" class="btn btn-bitbucket">质证</button>
+            <button type="button" class="btn btn-danger">组庭</button>
+            <button type="button" class="btn btn-success">申请仲裁员回避</button>
+            <button type="button" class="btn btn-warning">仲裁披露</button>
+            <a href="{:url('Proof/index',['dossier_id'=>$d_id])}" class="btn btn-success btn-add btn-dialog">提交证据</a>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="box box-success">
+    <div class="box-header">
+        <h3 class="box-title">基本资料</h3>
+    </div>
+    <div class="box-body table-responsive">
+        <ul class="list-group list-group-unbordered">
+            <li class="list-group-item">
+                <b>id</b> <a class="pull-right">{$dossierInfo.id}</a>
+            </li>
+            <li class="list-group-item">
+                <b>申请时间</b> <a class="pull-right">{$dossierInfo.addtime}</a>
+            </li>
+            <li class="list-group-item">
+                <b>当前状态</b> <a class="pull-right">{$dossierInfo['status']}</a>
+            </li>
+            <li class="list-group-item">
+                <b>费用</b> <a class="pull-right">{$dossierInfo['request']}</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="box box-success">
+    <div class="box-header">
+        <h3 class="box-title">当事人</h3>
+    </div>
+    <div class="box-body table-responsive">
+        <ul class="list-group list-group-unbordered">
+            {foreach $userList as $vo}
+            <li class="list-group-item">
+                <b>姓名</b> <a >{$vo.name}</a>
+                <b>电话</b> <a >{$vo.phone}</a>
+                <b>角色</b> <a >{$vo.role}</a>
+            </li>
+            {/foreach}
+        </ul>
+    </div>
+</div>
+
+
+<div class="box box-success">
+    <div class="box-header">
+        <h3 class="box-title">申请资料</h3>
+    </div>
+    <div class="box-body table-responsive">
+        <ul class="list-group list-group-unbordered">
+            {foreach $userList as $vo}
+            <li class="list-group-item">
+                <b>姓名</b> <a >{$vo.name}</a>
+            </li>
+            {/foreach}
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

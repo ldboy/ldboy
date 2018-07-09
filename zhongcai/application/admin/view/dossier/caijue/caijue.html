@@ -1,0 +1,21 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label for="c-cj_value" class="control-label col-xs-12 col-sm-2">请输入裁决结果:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea style="height: 500px" id="c-cj_value" data-rule="required" class="form-control  editor" rows="5" name="row[cj_value]" cols="50">{$row.cj_value}</textarea>
+            <a href="{$cjsurl}" type="button" class="btn btn-danger btn-dialog" title="预览裁决书">预览(保存后可预览)</a>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            
+             <?php if($btn1['title']){ ?>
+            <button type="submit" class="btn btn-success btn-embossed">{$btn1.title}</button>
+             <?php } ?>
+            <?php if($btn2['title']){ ?>
+            <a href="{:url('dossier.cp/caijuesend',['id'=>$did])}" type="button" class="btn btn-danger btn-warning-tip" data-title="提示" data-tip="确定要发送吗？">{$btn2.title}</a>
+            <?php } ?>
+        </div>
+    </div>
+</form>

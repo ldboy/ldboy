@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0 auto;
+            background: #FFF;
+            font-family: "宋体", "新宋体", "Microsoft YaHei UI";
+            color: #333;
+            font-size: 16px;
+        }
+
+        .clearfix:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        .clearfix {
+            display: block;
+        }
+
+        .borderBtm {
+            border-bottom: 1px solid #000;
+        }
+
+        .Bold {
+            font-weight: bold;
+            font-size: 32px;
+        }
+
+        .xywrap {
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .xywrap .title {
+            margin: 20px auto 30px;
+            width: 100%;
+            height: 56px;
+            font-weight: bold;
+            line-height: 56px;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        .little_title {
+            margin: 0 auto;
+            width: 100%;
+            height: 56px;
+            font-weight: 600;
+            line-height: 56px;
+            font-size: 22px;
+            text-align: center;
+        }
+
+        .xywrap .main_info {
+            margin: 0 auto;
+            width: 98%;
+        }
+
+        .xywrap .main_info p {
+            line-height: 1.5;
+        }
+
+        .xywrap .content {
+            margin: 0 auto;
+            width: 98%;
+        }
+
+        .xywrap .content p {
+            line-height: 1.8;
+        }
+
+        .fb {
+            font-weight: 600;
+        }
+
+        .xeiyibtm {
+            margin: 2% auto 0;
+            width: 100%;
+        }
+
+        .xeiyibtm .xyleft {
+            margin: 0 auto;
+            float: left;
+            width: 50%;
+        }
+
+        .xeiyibtm .xyright {
+            margin: 0 auto;
+            float: right;
+            width: 50%;
+        }
+
+        table {
+            border: 1px solid #000;
+            border-collapse: collapse;
+        }
+
+        table tr {
+            border: #000 solid 1px;
+        }
+
+        td {
+            height: 24px;
+            line-height: 22px;
+            border: #000 solid 1px;
+        }
+
+        .date {
+            margin: 100px auto;
+            width: 98%;
+            padding-right: 2%;
+            text-align: right;
+            font-family: "宋体","SimSun";font-size:22px;
+        }
+
+        .xeiyibtm1 {
+            margin: 10% 0;
+            width: 30%;
+            float: left;
+            text-align: left;
+        }
+
+        .xeiyibtm1 p {
+            text-align: left;
+        }
+
+        .xieyi_right_btm {
+            margin:60px auto;
+            width: 96%;
+            height: 160px;
+            text-align: right;
+            position: relative;
+        }
+
+        .xieyi_right_btm .people {
+            text-align: right;
+        }
+
+        .xieyi_right_btm .sign {
+            width: 20%;
+            height: 45px;
+            position: absolute;
+            top: -2%;
+            right: -1%;
+        }
+
+        .xieyi_right_btm .sign img {
+            width: 100%;
+        }
+
+        .kongtwo {
+            text-indent: 2em;
+        }
+
+
+
+.title1{  margin:35px auto 0;
+    width: 100%;
+    height: 56px;
+    font-weight: bold;
+    line-height: 56px;
+    font-size:38px;
+    text-align: center;
+    font-family: "宋体","SimSun";
+}
+.title2{  margin:0 auto;
+            width: 100%;
+            height: 56px;
+            font-weight: bold;
+            line-height: 56px;
+            font-size:38px;
+            text-align: center;
+            font-family: "宋体","SimSun"; }
+
+ .title3{  margin:8px auto 0;
+            width: 100%;
+            height:46px;
+            line-height:46px;
+            font-size:22px;
+            text-align: center;
+     font-family: "宋体","SimSun";
+        }
+.title4{  margin:0 auto;
+            width: 100%;
+    height:46px;
+    line-height:46px;
+            font-size:22px;
+            text-align: center;
+    font-family: "宋体","SimSun";
+ }
+.margintop{ margin-top:22px!important;}
+.margintop p{ font-family: "黑体","SimHei";font-size:22px;}
+.margintop span{ font-family: "宋体","SimSun";}
+ .con{ font-family: "宋体","SimSun";font-size:22px; padding-top:20px;}
+</style>
+</head>
+<?php if(!$_GET['i_m_g']){  ?>
+
+<body style="width:84%; margin: 0 auto">
+<?php }else{    ?>
+
+<body style="width:170mm; padding-left:20mm; padding-right:10mm;">
+
+<?php   }  ?>
+
+{$content}
+<script>
+     {$divedit}.forEach(function (data) {
+         console.log(data.div_id);
+         if(document.getElementById(data.div_id))  document.getElementById(data.div_id).innerHTML = data.val1;
+    })
+
+</script>
+</body>
+</html>

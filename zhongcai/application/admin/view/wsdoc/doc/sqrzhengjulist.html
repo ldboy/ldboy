@@ -1,0 +1,22 @@
+<div class="xywrap">
+    <section class="title_one">证据清单</section>
+    <div class="main_info margintop">
+        <?php if($d['users']['role'][1][0]['type'] == 2){ ?>
+        <p>申&nbsp;&nbsp;&nbsp;请&nbsp;&nbsp;&nbsp;人：<span>{$d.users.role.1.0.name}</span></p>
+        <?php }else{ ?>
+        <p>申&nbsp;&nbsp;&nbsp;请&nbsp;&nbsp;&nbsp;人：<span>{$d.users.role.1.0.name}</span></p>
+        <?php } ?>
+        <p>被申请人：<span>{$d.users.role.1.0.bei_apply_peo}</span></p>
+
+        <p>提交人姓名：<span>{$d.test_zhengjulist.sqr.tjr}</span></p>
+        <p>提交时间：<span>{$d.test_zhengjulist.sqr.addtime}</span></p>
+    </div>
+    <div class="content con">
+        {php}$i=1;{/php}
+        {foreach name="$d.docs.zj.thisyw" item="vo"}
+        <p>证据{$vo.z_no}、{$vo.name}<!--（共{$vo.file_num}页）-->，欲证明{$vo.des}{php}  if($i==count($d['docs']['zj']['thisyw'])){ echo "。"; }else{ echo "；"; }  {/php}</p>
+        {php}$i++;{/php}
+        {/foreach}
+    </div>
+</div>
+

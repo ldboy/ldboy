@@ -1,0 +1,58 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label for="c-doc_model_id" class="control-label col-xs-12 col-sm-2">{:__('Doc_model_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-doc_model_id" data-rule="required" data-source="doc/model/index" class="form-control selectpage" name="row[doc_model_id]" type="text" value="{$row.doc_model_id}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-type" class="control-label col-xs-12 col-sm-2">{:__('Type')}:</label>
+        <div class="col-xs-12 col-sm-8">
+                        
+            <select  id="c-type" data-rule="required" class="form-control selectpicker" name="row[type]">
+                {foreach name="typeList" item="vo"}
+                    <option value="{$key}" {in name="key" value="$row.type"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-sub_type" class="control-label col-xs-12 col-sm-2">{:__('Sub_type')}:</label>
+        <div class="col-xs-12 col-sm-8">
+                        
+            <select  id="c-sub_type" data-rule="required" class="form-control selectpicker" name="row[sub_type]">
+                {foreach name="subTypeList" item="vo"}
+                    <option value="{$key}" {in name="key" value="$row.sub_type"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-name" class="control-label col-xs-12 col-sm-2">{:__('Name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-name" data-rule="required" class="form-control" name="row[name]" type="text" value="{$row.name}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-flag" class="control-label col-xs-12 col-sm-2">{:__('Flag')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-flag" data-rule="required" class="form-control" name="row[flag]" type="text" value="{$row.flag}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-sync_id" class="control-label col-xs-12 col-sm-2">{:__('Sync_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-sync_id" data-rule="required" data-source="sync/index" class="form-control selectpage" name="row[sync_id]" type="text" value="{$row.sync_id}">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

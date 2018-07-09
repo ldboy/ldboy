@@ -1,0 +1,31 @@
+<div class="panel panel-default panel-intro">
+    <div class="panel-heading">
+        {:build_heading(null,FALSE)}
+
+        <ul class="nav nav-tabs" style="font-size: larger">
+            <li class="active"><a href="#-1" class="btn btn-info" data-toggle="tab">所有<span class="pull-right">[{$total}]</span></a></li>
+            {foreach name="typeList" item="vo"}
+            <li><a href="#{$vo.key}" data-toggle="tab">{$vo.name}<span class="badge pull-right badge-success bg-{$vo.bage_color}">{$vo.num}</span></a></li>
+            {/foreach}
+        </ul>
+
+        <div class="commonsearch-table"><form class="form-horizontal form-commonsearch nice-validator n-default n-bootstrap" novalidate="" method="post" action=""><fieldset><div class="row"><div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-3"><label for="id" class="control-label col-xs-4">ID</label><div class="col-xs-8"><input type="hidden" class="form-control operate" name="id-operate" data-name="id" value="=" readonly=""><input type="text" class="form-control" name="id" value="" placeholder="ID" id="id" data-index="0"></div></div><div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-3"><label for="zno" class="control-label col-xs-4">受理编号</label><div class="col-xs-8"><input type="hidden" class="form-control operate" name="zno-operate" data-name="zno" value="=" readonly=""><input type="text" class="form-control" name="zno" value="" placeholder="受理编号" id="zno" data-index="1"></div></div><div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-3"><label for="sq_time" class="control-label col-xs-4">申请时间</label><div class="col-xs-8"><input type="hidden" class="form-control operate" name="sq_time-operate" data-name="sq_time" value="=" readonly=""><input type="text" class="form-control" name="sq_time" value="" placeholder="申请时间" id="sq_time" data-index="2"></div></div><div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-3"><label for="sl_time" class="control-label col-xs-4">受理时间</label><div class="col-xs-8"><input type="hidden" class="form-control operate" name="sl_time-operate" data-name="sl_time" value="=" readonly=""><input type="text" class="form-control" name="sl_time" value="" placeholder="受理时间" id="sl_time" data-index="3"></div></div><div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-3"><label for="sq_string" class="control-label col-xs-4">申请方</label><div class="col-xs-8"><input type="hidden" class="form-control operate" name="sq_string-operate" data-name="sq_string" value="=" readonly=""><input type="text" class="form-control" name="sq_string" value="" placeholder="申请方" id="sq_string" data-index="4"></div></div><div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-3"><label for="bsq_string" class="control-label col-xs-4">被申请方</label><div class="col-xs-8"><input type="hidden" class="form-control operate" name="bsq_string-operate" data-name="bsq_string" value="=" readonly=""><input type="text" class="form-control" name="bsq_string" value="" placeholder="被申请方" id="bsq_string" data-index="5"></div></div><div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-3"><label for="zcw_name" class="control-label col-xs-4">操作人</label><div class="col-xs-8"><input type="hidden" class="form-control operate" name="zcw_name-operate" data-name="zcw_name" value="=" readonly=""><input type="text" class="form-control" name="zcw_name" value="" placeholder="操作人" id="zcw_name" data-index="7"></div></div><div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-3"><div class="col-sm-8 col-xs-offset-4"><button type="submit" class="btn btn-success" formnovalidate="">提交</button> <button type="reset" class="btn btn-default">重置</button> </div></div></div></fieldset></form></div>
+    </div>
+    <div class="panel-body" style="font-size: larger">
+        <div id="myTabContent" class="tab-content ">
+            <div class="tab-pane fade active in" id="one">
+                <div class="widget-body no-padding">
+                    <div id="toolbar" class="toolbar">
+                        <a href="javascript:;" class="btn btn-primary btn-refresh " title="刷新"><i class="fa fa-refresh"></i> </a>
+
+                    </div>
+                    <table id="table" class="table table-striped table-bordered table-hover"
+
+                           width="100%">
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

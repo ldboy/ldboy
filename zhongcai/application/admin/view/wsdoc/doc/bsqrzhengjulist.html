@@ -1,0 +1,36 @@
+<head>
+    <style>
+        .xywrap{width:650px; height: 978px}
+    </style>
+</head>
+<div class="xywrap">
+    <br>
+    <section class="title">证据清单</section>
+    <br>
+    <div class="content">
+
+        <?php if($d['users']['role'][1][0]['type'] == 2){ ?>
+            <p><span class="fb">申请人：</span>{$d.users.role.1.0.name}</p><br>
+        <?php }else{ ?>
+            <p><span class="fb">申请人：</span>{$d.users.role.1.0.name}</p><br>
+        <?php } ?>
+
+        <p><span class="fb">被申请人：</span>{$d.users.role.1.0.bei_apply_peo}</p><br>
+        <p><span class="fb">提交人姓名：</span>{$d.test_zhengjulist.bsqr.tjr}</p><br>
+
+        <p><span class="fb">提交时间：</span>{$d.test_zhengjulist.bsqr.addtime}</p><br>
+        <!--{$d.test_zhengjulist.bsqr.list}-->
+        <!--{foreach name="$d.docs.zj.thisyw" item="vo"}
+        <p>证据{$vo.z_no}、{$vo.name}&lt;!&ndash;（共{$vo.file_num}页）&ndash;&gt;，欲证明{$vo.des}；</p>
+        {/foreach}-->
+
+
+        {php}$i=1;{/php}
+        {foreach name="$d.docs.zj.thisyw" item="vo"}
+        <p>证据{$vo.z_no}、{$vo.name}<!--（共{$vo.file_num}页）-->，欲证明{$vo.des}{php}  if($i==count($d['docs']['zj']['thisyw'])){ echo "。"; }else{ echo "；"; }  {/php}</p>
+        {php}$i++;{/php}
+        {/foreach}
+    </div>
+    <p style="text-align: center">以下无正文</p>
+</div>
+

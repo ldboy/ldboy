@@ -1,0 +1,116 @@
+<div class="panel panel-default panel-intro">
+    <div class="panel-heading">
+        {:build_heading(null,FALSE)}
+
+        <ul class="nav nav-tabs" style="font-size: larger">
+            {if $type eq -1}
+            <li class="dropdown ">
+                {if $ptyh eq 1}
+
+
+                        <li  ><a href="#-1"  data-toggle="tab"    >所有
+                            <span  class=" badge pull-right badge-success bg-{$vo.bage_color}">{$total}</span></a></li>
+                        <li class="divider"></li>
+
+                {else}
+
+                    <a href="#-1" class="dropdown-toggle active"   data-toggle="dropdown">所有案件<span class="pull-right">{if $total}[{$total}]{else}{$total}{/if}</span> <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li  ><a href="#-1"  data-toggle="tab"    >所有
+                            <span  class=" badge pull-right badge-success bg-{$vo.bage_color}">{$total}</span></a></li>
+                        <li class="divider"></li>
+                        {foreach name="typeList" item="vo"}
+                        <li  ><a href="#{$vo.key}"  data-toggle="tab"  style="padding-left: 2px;" >{$vo.name}
+                            <span  class=" badge pull-right badge-success bg-{$vo.bage_color}">{$vo.num}</span></a></li>
+
+                        <li class="divider"></li>
+
+                        {/foreach}
+                    </ul>
+                {/if}
+            </li>
+            {else}
+            <li><a href="#-1" class="btn btn-info" data-toggle="tab">所有<span class="pull-right">[{$total}]</span></a>
+            </li>
+            {/if}
+
+            {foreach name="typeList" item="vo"}
+
+                    {if condition="$vo.sub_num>0"}
+                        {foreach name="$vo.sublist" item="val"}
+
+                            <li class="dropdown  {if $type eq $vo.key}active{/if}">
+
+                                <a href="#{$val.key}" data-toggle="tab">
+                                    {$val.name}
+                                    <span class="badge pull-right badge-success bg-{$vo.bage_color}">{$val.num}</span>
+
+
+                                </a>
+
+
+                            </li>
+                        {/foreach}
+                    {else}
+                    <li  class="{if $type eq $vo.key}active{/if}"><a href="#{$vo.key}"  data-toggle="tab"  >{$vo.name}
+                        <span  class=" badge pull-right badge-success bg-{$vo.bage_color}">{$vo.num}</span></a></li>
+
+                    {/if}
+
+            {/foreach}
+
+        </ul>
+
+
+    </div>
+    <div class="panel-body" style="font-size: larger">
+        <div class="bootstrap-table">
+            <div class="commonsearch-table">
+                <form id="kuaijiesousuo" class="form-horizontal form-commonsearch nice-validator n-default n-bootstrap"
+                      novalidate="" method="post" action="">
+                    <fieldset>
+                        <div class="row">
+
+
+                            <div class="form-group col-xs-8 ">
+                                <label class="control-label col-xs-4">快捷搜索</label>
+                                <div class="col-xs-8">
+
+                                    <input type="text" class="form-control" name="sq_phone" value=""
+                                           placeholder="ID、受理号、手机号、身份证号、申请人姓名" id="sq_phone" data-index="1">
+                                </div>
+                            </div>
+
+                            <div class="form-group col-xs-4">
+                                <div class="col-sm-12">
+                                    <button type="submit" class="btn btn-success" formnovalidate="">搜索</button>
+                                    <button type="reset" class="btn btn-default">重置</button>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+
+        </div>
+
+        <div id="myTabContent" class="tab-content ">
+            <div class="tab-pane fade active in" id="one">
+                <div class="widget-body no-padding">
+
+
+                    <div id="toolbar" class="toolbar">
+                        <a href="javascript:;" class="btn btn-primary btn-refresh " title="刷新"><i
+                                class="fa fa-refresh"></i> </a>
+
+                    </div>
+                    <table id="table" class="table table-striped table-bordered table-hover"
+
+                           width="100%">
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

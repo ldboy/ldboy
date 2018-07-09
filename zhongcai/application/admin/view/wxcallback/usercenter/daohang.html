@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>资料导航</title>
+    <link type="text/css" rel="stylesheet" href="__CDN__/assets/css/wechat/mall.css"/>
+
+    <style>
+        .user_info {
+            display: block;
+            overflow: hidden;
+            padding-bottom: 0;
+        }
+         .quit_btn {
+            background-color: #18bc9c;
+            border: 1px solid #18bc9c;
+            border-radius: 5px;
+            color: #000000;
+            font-size: 26px;
+            padding: 0.5% 0;
+            display: block;
+            text-align: center;
+             width: 80%;
+             margin: 20px auto;
+        }
+
+        .user_info ul li a{ display:block; width:100%;}
+        .user_info ul li span{ display:block;}
+        .user_info ul li span:first-child{ float:left; width:60%; text-align: left;}
+        .user_info ul li span:last-child{ float:right; width:40%; text-align:right;}
+
+
+    </style>
+</head>
+<body class="body_color">
+<div id="child_header">
+    <div class="goback"><a href="javascript:history.back(-1)"><i></i></a></div>
+    <div class="current_location"><span>资料导航</span></div>
+
+</div>
+    <span  style="color: green; display:block; line-height: 40px; height: 40px; margin: 0 auto; text-align: center">案号:{$zno_str}</span>
+<div class="user_info">
+
+    <ul>
+        {foreach name="list" item="vo"}
+            <li><a target="_blank" style="color: #0a6aa1" href="{$vo.link}" class="clearfix"> <span>{$vo.name}</span> <span>{if $vo.num} [{$vo.num}] {/if}</span></a></li>
+        {/foreach}
+
+    </ul>
+    <div style='clear:both;'></div>
+        {if $btnList}
+            {foreach name="btnList" item="value"}
+            <a  href="javascript:void(0);"  class="quit_btn"  onclick=" var tmp =window.confirm('{$value.data_tip}');if(tmp){ window.location.href='{$value.url}'}else{return false}">{$value.name}</a>
+            {/foreach}
+        {else}
+            <a class="quit_btn" onclick="tankuang()">联系我们</a>
+        {/if}
+</div>
+</body>
+<script>
+    function tankuang()
+    {
+        alert('请咨询电话 0311-86687359');
+    }
+</script>
+
+<script>
+
+
+
+
+
+</script>
+</html>

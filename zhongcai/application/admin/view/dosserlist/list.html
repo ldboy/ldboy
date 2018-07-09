@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文档列表</title>
+    <script src="../../../../public/assets/js/backend/dosserlist/index.js"></script>
+</head>
+<body>
+<div>
+    <div class="panel panel-default panel-intro">
+        <!--{:build_heading()}-->
+        <a href="{:url('addDossier')}" class="btn btn-danger btn-toggle-all" title="添加业务" ><i class="fa fa-plus"></i>添加业务</a>
+        <div class="panel-body">
+            <div id="myTabContent" class="tab-content">
+                <div class="tab-pane fade active in" id="one">
+                    <div class="widget-body no-padding">
+                        <table id="table" class="table table-striped table-bordered table-hover" data-operate-edit="1" data-operate-del="1" width="100%">
+                            <thead>
+                            <tr>
+                                <th style="text-align: center; vertical-align: middle; " data-field="model_name"><div class="th-inner ">ID</div><div class="fht-cell"></div></th>
+                                <th style="text-align: center; vertical-align: middle; " data-field="model_name"><div class="th-inner ">业务名称</div><div class="fht-cell"></div></th>
+                                <th style="text-align: center; vertical-align: middle; " data-field="model_name"><div class="th-inner ">卷宗编号</div><div class="fht-cell"></div></th>
+                                <th style="text-align: center; vertical-align: middle; " data-field="model_name"><div class="th-inner ">仲裁受理编号</div><div class="fht-cell"></div></th>
+                                <th style="text-align: center; vertical-align: middle; " data-field="model_name"><div class="th-inner ">业务类型</div><div class="fht-cell"></div></th>
+                                <th style="text-align: center; vertical-align: middle; " data-field="model_name"><div class="th-inner ">仲裁机构</div><div class="fht-cell"></div></th>
+                                <th style="text-align: center; vertical-align: middle; " data-field="operate"><div class="th-inner ">卷宗状态</div><div class="fht-cell"></div></th>
+                                <th style="text-align: center; vertical-align: middle; " data-field="operate"><div class="th-inner ">添加时间</div><div class="fht-cell"></div></th>
+                                <th style="text-align: center; vertical-align: middle; " data-field="operate"><div class="th-inner ">卷宗金额</div><div class="fht-cell"></div></th>
+                                <th style="text-align: center; vertical-align: middle; " data-field="operate"><div class="th-inner ">操作</div><div class="fht-cell"></div></th>
+                            </tr>
+                            </thead>
+                            <tbody data-listidx="0">
+                            {volist name="list" id="vo"}
+                            <tr data-index="0">
+                                <td style="text-align: center; vertical-align: middle; ">{$vo['id']}</td>
+                                <td style="text-align: center; vertical-align: middle; ">{$vo['title']}</td>
+                                <td style="text-align: center; vertical-align: middle; ">{$vo['no']}</td>
+                                <td style="text-align: center; vertical-align: middle; ">{$vo['zno']}</td>
+                                <td style="text-align: center; vertical-align: middle; ">{$vo['type']}</td>
+                                <td style="text-align: center; vertical-align: middle; ">{$vo['jg_name']}</td>
+                                <td style="text-align: center; vertical-align: middle; ">{$vo['status']}</td>
+                                <td style="text-align: center; vertical-align: middle; ">{$vo['addtime']}</td>
+                                <td style="text-align: center; vertical-align: middle; ">{$vo['money']}</td>
+                                <td style="text-align: center; vertical-align: middle; ">
+                                    <a href="{:url('dossier.info/index',['id' => $vo['id']])}" class="btn btn-xs btn-success btn-editone" title="查看详情" data-table-id="table" data-field-index="3" data-row-index="0" data-button-index="1"><i class="fa fa-pencil"></i>详情</a>
+                                    <!--<a href="{$vo['signUrl']}" class="btn btn-xs btn-danger btn-delone" title="签字" data-table-id="table" data-field-index="3" data-row-index="0" data-button-index="2"><i class="fa fa-edit"></i></a>
+                                    <a href="{$vo['uploadUrl']}" class="btn btn-xs btn-danger btn-delone" title="上传" data-table-id="table" data-field-index="3" data-row-index="0" data-button-index="2"><i class="fa fa-folder-open"></i></a>-->
+                                </td> </tr>
+                            {/volist}
+                            </tbody>
+                        </table>
+                        <div align="center">{$page}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="layer-footer">
+                <label class="control-label col-xs-12 col-sm-2"></label>
+                <div class="col-xs-12 col-sm-8">
+                    <!--<button type="submit" class="btn btn-success btn-embossed">{:__('OK')}</button>
+                    <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

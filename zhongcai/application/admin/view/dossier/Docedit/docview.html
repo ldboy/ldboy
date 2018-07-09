@@ -1,0 +1,305 @@
+<div class="row ">
+
+
+    <div class="col-xs-8" id="ws-body" style="font-size: larger">
+
+        <div class="box box-success">
+            <div class="box-header">
+                <h3 class="box-title">{$title}</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body ">
+                <iframe id="iframepage" src="{$view_url}" width="100%" onLoad="iFrameHeight()" height="1000px"
+                        frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling-x="no" scrolling-y="auto"
+                        allowtransparency="yes"></iframe>
+            </div>
+            <!-- /.box-body -->
+        </div>
+
+    </div>
+    <div class="col-xs-4" style="font-size: larger">
+
+        <div class="box  box-warning">
+            <div class="box-header">
+                <h3 class="box-title">操作记录</h3>
+                <a href="{:url('dossier.docedit/allshow',['doc_id'=>$docid])}"
+                   class="btn   btn-md btn-warning pull-right btn-dialog" title="详情列表"><i class="fa fa-list"></i>
+                    详情列表</a>
+            </div>
+
+            <div class="box-body">
+                <table class="table table-hover">
+                    <tbody>
+                    <tr>
+                        <th>操作人</th>
+                        <th>操作时间</th>
+                        <th>修改位置</th>
+                        <th>操作事项</th>
+                    </tr>
+                    {volist name="logList" id="vo"}
+                    <tr>
+                        <td>{$vo.name}</td>
+                        <td>{$vo.addtime}</td>
+                        <td>{$vo.title}</td>
+                        <td>
+
+                            <a href="{:url('dossier.docedit/show',['cid'=>$vo['id']])}"
+                               class="btn btn-info btn-xs btn-detail btn-dialog" title="{$title}"><i
+                                    class="fa fa-mouse-pointer"></i>
+                                详情</a>
+                        </td>
+                    </tr>
+                    {/volist}
+                    </tbody>
+                </table>
+            </div>
+
+
+
+        </div>
+
+
+        {if condition="$edit_css"}
+        <div class="box  box-warning" id="caozuodiv">
+            <div class="box-header">
+                <h3 class="box-title">{$title}</h3>
+            </div>
+            <div class="box-body ">
+                <form class="form-horizontal margin" role="form" style="padding-left: 20px" data-toggle="validator" method="POST"  action="{:url('admin/dossier.docedit/css', '', '')}">
+                    <div class="form-group">
+                        <label for="hangjianju"  class="margin">行间距:</label>
+
+                        <input id="hangjianju"   style="width: 100px" readonly   type="number" value="{$css.lineHeight}" name="hangjianju"/> <i class="fa  fa-plus margin"  onclick="hang_plus(0.1)"  style="font-size: 20px ;color:#3498db"></i> <i onclick="hang_plus(-0.1)" class="fa  fa-minus margin" style="font-size: 20px ;color:#3498db"></i>
+                    </div>
+                    <div class="form-group">
+                        <label for="zijianjue" class="margin">字间距:</label>
+
+                        <input id="zijianjue"  style="width: 100px"   readonly   value="{$css.letterSpacing}" type="number" name="zijianjue"/><i class="fa  fa-plus margin" onclick="zi_plus(0.1)" style="font-size: 20px ;color:#3498db"></i> <i  onclick="zi_plus(-0.1)" class="fa  fa-minus margin" style="font-size: 20px ;color:#3498db"></i>
+
+                    </div>
+                    <div class="form-group">
+
+                        <div  >
+                            <input type="hidden" name="docid" value="{$docid}">
+
+                            <button type="button" onclick="baocun()" class="btn btn-info btn-embossed">保存并预览</button>
+
+                            <button type="button" onclick="xianyou()" class="btn btn-default btn-embossed">预览最后版本</button>
+
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        {/if}
+    </div>
+</div>
+<div style="height: 1px ;overflow: hidden">
+    <div id="editform">
+        <div class="margin" style="font-size: larger">
+            <form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST"
+                  action="{:url('admin/dossier.docedit/divedit', '', '')}">
+                <input type="hidden" name="docid" value="{$docid}">
+                <input type="hidden" name="divid" value="">
+                <input type="hidden" name="divtitle" value="">
+                <div class="form-group">
+                    <label class="control-label col-xs-12 col-sm-2">原内容:</label>
+                    <div class="col-xs-12 col-sm-9">
+                    <textarea class="form-control " readonly rows="7" style="font-size: larger" name="val0"
+                              cols="80">{$val0}</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-xs-12 col-sm-2">修改后:</label>
+                    <div class="col-xs-12 col-sm-9">
+                        <textarea data-rule="required" class="form-control" style="font-size: larger;color: green ; "
+                                  rows="8" name="val1" cols="80"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-xs-12 col-sm-2"></label>
+                    <div class="col-xs-12 col-sm-8">
+                        <button type="submit" class="btn btn-large btn-success btn-embossed" data-ajax="1">提交</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    var subWeb;
+    var ifm;
+    var editcount={$editcount};
+
+    function changeHeight() {
+        ifm.height = subWeb.body.scrollHeight + 500;
+        document.body.height = ifm.height+500;
+    }
+
+    function iFrameHeight() {
+          ifm = document.getElementById("iframepage");
+          subWeb = document.frames ? document.frames["iframepage"].document : ifm.contentDocument;
+        // console.log(ifm.width);
+        if (ifm != null && subWeb != null) {
+            changeHeight();
+            //ifm.width = subWeb.body.scrollWidth;
+
+                onIframe.call(subWeb);
+        
+
+            {if condition="$edit_css"}
+            var ie6 = document.all;
+            var dv = $('#caozuodiv'), st;
+            dv.attr('otop', dv.offset().top); //存储原来的距离顶部的距离
+            $(window).scroll(function () {
+                st = Math.max(document.body.scrollTop || document.documentElement.scrollTop);
+                if (st > parseInt(dv.attr('otop'))) {
+                    if (ie6){
+                        dv.css({ position: 'absolute', top: st });
+                    }
+
+
+
+                    else if (dv.css('position') != 'fixed') dv.css({ 'position': 'fixed', top: 0  });
+                } else if (dv.css('position') != 'static') dv.css({ 'position': 'static' });
+            });
+
+            {/if}
+
+
+        }
+    }
+
+    function onIframe() {
+        var editform = $("#editform");
+        $(this.body).find('[data-edit-title]').each(function () {
+            $(this).css({"border": "2px solid green", "margin": "10px auto", "padding": "2px auto"});
+            var isedit = editcount && editcount[$(this).attr("id")];
+            var changeitemdiv = $("<div style='margin-bottom: -15px;text-align:  right;'> <span data-show-edit-id='"+$(this).attr("id")+"' data-show-edit-title='"+$(this).data("editTitle")+"' style='background-color: "+(isedit?"#ff8502":"green")+";font-size: small;margin-top: -10px;text-align:  right;padding: 5px;color: #fffcef'>"+(  (isedit)?(editcount[$(this).attr("id")]['des']+",查看"):"无人修改"   )+"</span></div>");
+            changeitemdiv.find("span").on("click",function () {
+                showchanges($(this).data("showEditId"),$(this).data("showEditTitle")+"[修改记录]");
+            });
+            $(this).before(changeitemdiv);
+            $(this).dblclick(function () {
+                var data = $(this).data();
+
+                editform.show();
+                editform.find("input[name=divid]").val($(this).attr("id"));
+                editform.find("input[name=divtitle]").val(data['editTitle']);
+                var htmlvalue = $(this).find("p").length > 0 ? $.trim($(this).find("p").eq(0).html()) : $.trim($(this).html());
+                editform.find("[name=val0]").text(htmlvalue);
+                editform.find("[name=val1]").text(htmlvalue);
+                Layer.open({
+                    type: 1,
+                    skin: 'layui-layer-rim', //加上边框
+                    area: ['800px', '600px'], //宽高
+                    title: "修改" + data['editTitle'],
+                    content: editform
+                });
+
+            });
+            console.log($(this).data());
+        });
+    }
+
+
+
+</script>
+<script>
+
+    
+    function showchanges(id,title) {
+        Backend.api.open("{:url('dossier.docedit/allshow',['id'=>$docid])}&divid="+id,title);
+    }
+    
+    function csschange(css) {
+        $(this).find(".con p").css(css);
+        if(this.whenContentCssChange)
+        {
+
+            this.whenContentCssChange();
+        }
+        changeHeight();
+
+    }
+
+    var hangjianju =null;
+    function hang_plus(step) {
+
+        if(!hangjianju) hangjianju =  $("#hangjianju");
+        hangjianju.val((Number(hangjianju.val())+Number(step)).toFixed(2));
+        csschange.call(subWeb,{"line-height":hangjianju.val()});
+
+    }
+    var zijianjue =null;
+    function zi_plus(step) {
+
+        if(!zijianjue) zijianjue =  $("#zijianjue");
+        zijianjue.val( (Number(zijianjue.val())+Number(step)).toFixed(2));
+        csschange.call(subWeb,{"letter-spacing":zijianjue.val()+"px"});
+    }
+
+
+    var  xianyouurl = '{$xianyouurl}';
+    function xianyou() {
+        xianyouurl &&  Backend.api.open(xianyouurl);
+    }
+
+    function baocun() {
+        if(!hangjianju) hangjianju =  $("#hangjianju");
+        if(!zijianjue) zijianjue =  $("#zijianjue");
+
+        Backend.api.ajax('{:url('dossier.docedit/css',['docid'=>$docid])}&hangjianju='+ hangjianju.val()+"&zijianjue="+zijianjue.val(),function (result) {
+
+            yulan();
+
+        });
+    }
+    
+    function yulan() {
+
+
+
+        showmsg("请稍等");
+        function showmsg(title) {
+            Layer.closeAll();
+            index = Layer.msg(title, {
+                time: 2000000, //2秒关闭（如果不配置，默认是3秒）
+
+                shade: 0.4
+            });
+        }
+
+
+        var f = function () {
+
+            $.getJSON(Config.moduleurl + "/dossier.docedit/yulancheck/docid/" + {$docid} , function (result) {
+
+                if (result.ok == 0) {
+                    Layer.closeAll();
+
+                } else if (result.ok == 1) {
+                    showmsg("请稍等");
+                    setTimeout(f, 3000);
+                } else if (result.ok == 2) {
+                    Layer.closeAll();
+                    xianyouurl = result.url;
+                    Backend.api.open(result.url);
+                }
+
+            });
+
+
+        };
+
+
+
+        Backend.api.ajax('{:url('dossier.docedit/yulan',['docid'=>$docid])}',function (result) {
+
+            f();
+
+        });
+        
+    }
+</script>

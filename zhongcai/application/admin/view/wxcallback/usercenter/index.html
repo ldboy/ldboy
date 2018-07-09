@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <link rel="stylesheet" href="__CDN__/assets/css/wechat/mall.css" type="text/css" />
+
+        <title>个人中心</title>
+    </head>
+    <body class="body_color_user">
+        <div class="mall_main">
+            <div id="child_header">
+                <div class="goback"><a href="javascript:history.back(-1)"><i></i></a></div>
+                <div class="current_location"><span>个人中心</span></div>
+            </div>
+            <div class="wx_wrap">
+                <a href="http://zcw.wszx.cc/admin/wechat/Publicnumber/user_info?openid={$info.openid}">
+                    <div class="person_top">
+                        <img class="top_bj" src="__CDN__/assets/img/wechat/top_bj.jpg">
+                        <div class="per_con">
+                            <div class="user_photo">
+                                {if $info.headimgurl}
+                                <img src="{$info.headimgurl}">
+                                {else}
+                                <img src="__CDN__/assets/img/wechat/user_photo.jpg">
+                                {/if}
+                                <span>{$info.nickname}</span>
+                            </div>
+                            <div class="name_right">
+                                <p>姓名：{$info.real_name}</p>
+                                <p>身份证号：{$info.id_card}</p>
+                                <p>地址：{$info.province}-{$info.city}</p>
+                                <p class="p2">注：如有疑问,请电话咨询<br>0311-86687359</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="my_menu">
+                    <ul>
+                        <li class="li_list"><a href="http://zcw.wszx.cc/admin/wechat/Mylist/index?idid={$info.idid}"><img src="__CDN__/assets/img/wechat/user_icon1.png"> <span>我的案件</span><b>{$anjiancount}</b></a></li>
+                        <li class="li_list"><a href="http://zcw.wszx.cc/admin/wechat/Mylist/inform?idid={$info.idid}"><img src="__CDN__/assets/img/wechat/user_icon2.png"> <span>消息提醒</span><b>{$xiaoxicount}</b></a></li>
+                        <li class="li_list"><a href="http://zcw.wszx.cc/admin/wechat/Mylist/index?idid={$info.idid}"><img src="__CDN__/assets/img/wechat/user_icon3.png"> <span>待处理</span></a></li>
+                    </ul>
+                </div>
+
+
+                <ul class="menu_list"> 
+
+                    <li class="tiao"><a href="http://zcw.wszx.cc/admin/wechat/Publicnumber/zczhinan">仲裁指南</a></li>
+                    <li class="tiao"><a href="http://zcw.wszx.cc/admin/wechat/Publicnumber/user_info?openid={$info.openid}">账户信息</a></li>
+                    <li class="tiao"><a href="http://zcw.wszx.cc/admin/wechat/Publicnumber/site">设置</a></li>
+                </ul>
+
+
+
+            </div>
+
+            <ul class="wx_nav">
+                <li><a><img src="http://zcw.wszx.cc/assets/img/wechat/usercenter.jpg"><span>我的</span></a></li>
+
+                <li><a href="http://filestore1.wszx.cc/zhongcai/uploads/sign/zhongcaiyuan.pdf" target="_blank"><img src="http://zcw.wszx.cc/assets/img/wechat/nav_icon2.png"><span>仲裁员</span></a></li>
+                <li><a href="http://www.sjzzc.gov.cn" target="_blank" ><img src="http://zcw.wszx.cc/assets/img/wechat/nav_icon4.jpg" ><span>石裁委</span></a></li>
+
+                <li><a href="http://zc.wszx.cc" target="_blank"><img src="http://zcw.wszx.cc/assets/img/wechat/nav_icon1.png"><span>首页</span></a></li>
+            </ul>
+        </div>
+    </body>
+</html>

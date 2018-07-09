@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>我的案件</title>
+  
+    <link rel="stylesheet" href="__CDN__/assets/css/wechat/mall.css" type="text/css" />
+
+    <style>
+        .zhz_love_zm{background-color: #666;}
+        .current_location_zhz  { font-size: 18px;color: #c87f0a; padding:0 4% ; width: 94%; height: 40px; line-height: 40px;}
+        .mall_main .address_list .list_left{
+            border: none;
+        }
+        .mall_main .address_list{
+            padding: 3% 3% 3%;
+        }
+        .mall_main  .pw2 em{
+            float: right;
+            font-style: normal;
+        }
+        .mall_main .address_list .list_left .pw2{
+            width: 100%
+        }
+        .mall_main .address_list{
+            box-shadow: none;   float: none;
+
+        }
+
+    </style>
+</head>
+<body class="body_color">
+<div class="mall_main">
+<div id="child_header">
+    <div class="goback"><a href="javascript:history.back(-1)"><i></i></a></div>
+    <div class="current_location"><span>我的案件消息</span></div>
+</div>
+     <span class="zhz_love_zm" style="color: #fff; display:block; line-height: 40px; height: 40px; margin: 0 auto; text-align: center">案件消息:{$count}条</span>
+<div class="mall_main">
+
+    {if $info}
+
+    {foreach $info as $key=>$value}
+
+       <div class="current_location_zhz">事项:{$value.content}</div>
+        <div class="address_list clearfix">
+            <div class="list_left clearfix">
+                <div class="pw2">
+                    <p>案由<em>{$value.title}</em></p>
+                    <p>事项时间<em>{$value.addtime}</em></p>
+                    <p>操作角色<em>{$value.cz_role}</em></p>
+                    <p>操作时间<em>{$value.addtime}</em></p>
+                    <p>消息状态<em>{$value.status_}</em></p>
+                    <p>案号<em>{$value.zno}</em></p>
+                </div>
+            </div>
+        </div>
+
+    {/foreach}
+    <span  style="color: green; display:block; line-height: 40px; height: 40px; margin: 0 auto; text-align: center">----以上为所有的消息----</span>
+    {else}
+    <span  style="color: green; display:block; line-height: 40px; height: 40px; margin: 0 auto; text-align: center">----暂无信息----</span>
+
+    {/if}
+</div>
+
+
+
+
+
+</div>
+
+
+</body>
+</html>

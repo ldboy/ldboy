@@ -1,0 +1,240 @@
+<?php
+    $d['info']['request'] = nl2br($d['info']['request']);
+    str_replace('\n','<br>',$d['info']['request']);
+?>
+<head>
+    <style>
+        .xywrap {
+            width: 650px;
+            height: 978px
+        }
+    </style>
+</head>
+<div class="xywrap">
+    <section class="title">{$d.jigou.info.name}</section>
+    <section class="title">裁决书</section>
+    <section class="little_title">{$d.info.zno_str}</section>
+    <div class="main_info">
+        <p class="kongtwo"><span class="fb">申请人：</span>{$d.users.role.1.0.name}</p><br>
+
+        <p class="kongtwo"><span class="fb">住  所：</span>{$d.users.role.1.0.address}</p><br>
+
+        <?php if($d['users']['role'][1][0]['type'] == 2){ ?>
+        <p class="kongtwo"><span class="fb">法定代表人：</span>{$d.users.role.1.0.f_name}</p><br>
+        <?php } ?>
+
+        <p class="kongtwo"><span class="fb">联系方式：</span>{$d.users.role.1.0.phone}</p><br>
+
+        <p class="kongtwo"><span class="fb">法人身份证号：</span>{$d.users.role.1.0.f_id_card}</p><br>
+
+        <?php foreach($d[users][role][2] as $ke=>$value){ ?>
+
+        <?php if($value['type'] == 2){ ?>
+        <p class="kongtwo"><span class="fb">{if(count($d[users][role][2])!=1)}第{$value.Num}{/if}被申请人：</span><?php echo $value['html_show']; ?><br></p><br>
+        <p class="kongtwo"><span class="fb">住  所：</span><?php echo $value['address']; ?></p><br>
+
+        <?php }else{ ?>
+        <p class="kongtwo"><span class="fb">{if(count($d[users][role][2])!=1)}第{$value.Num}{/if}被申请人：</span>{$value.name} {$value.sex} {$value.nation} {$value.birthday}</p><br>
+        <p class="kongtwo"><span class="fb">住  所：</span><?php echo $value['address'] ?></p><br>
+        <p class="kongtwo"><span class="fb">身份证号：</span><?php echo $value['id_num'] ?></p><br>
+        <?php } ?>
+        <?php } ?>
+
+
+    </div>
+    <div class="content">
+        <p>
+
+        </p>
+
+
+        <p class="kongtwo">
+            {$d.jigou.info.name}（以下简称本会）根据申请人{$d.users.role.1.0.name}（以下简称申请人）与
+            {foreach name="$d.users.role.2" item="vo" key="k"}
+            被申请人{$vo.name}（以下简称第{$vo.Num}被申请人）{if(count($d.users.role.2)-1 != $k)}、{/if}
+            {/foreach}
+            达成的《还款协议》中的仲裁条款和申请人向本会提交的《仲裁申请书》，于{$d.time.time30}受理了当事人之间因《还款协议》发生的争议仲裁案，案号为{$d.info.zno_str}。（第一被）申请人向本会预交了仲裁费0.00元。
+        </p>
+
+
+        <p class="kongtwo">
+            根据《中华人民共和国仲裁法》（以下简称《仲裁法》）和《石家庄仲裁委员会仲裁规则》（以下简称《仲裁规则》）的有关规定，本会向被申请人送达了仲裁通知书、仲裁申请书副本及其证据材料、《仲裁规则》、《石家庄仲裁委员会仲裁员名册》（以下简称《仲裁员名册》）和仲裁费用表，同时也将仲裁通知书、《仲裁规则》、《仲裁员名册》、仲裁费用表送达给申请人。
+        </p>
+
+
+        <p class="kongtwo">
+            双方当事人在{$d.info.hk_sign_time|date="Y年m月d日",###}签订的《还款协议》中对仲裁程序进行了如下约定：<br>
+            （一）各方当事人均同意仲裁程序按照《石家庄仲裁委员会仲裁规则》中的简易程序进行，并放弃《石家庄仲裁委员会仲裁规则》项下的期限权利；<br>
+            （二）出借人不修改、不变更仲裁请求，借款人及担保人不提反请求，但各方当事人享有对前述事项另案申请仲裁的权利；<br>
+            （三）各方当事人共同委托石家庄仲裁委员会主任指定一名仲裁员；<br>
+            （四）各方当事人均请求仲裁庭书面审理；<br>
+            （五）各方当事人如有答辩、证据提交，应当在收到《仲裁通知书》之日起5日内通过线上仲裁平台提交，逾期视为放弃；<br>
+            （六）各方当事人一致同意对证据进行书面质证，并自收到证据之日起5日内通过线上仲裁平台提交书面质证意见，逾期视为放弃；<br>
+            （七）各方当事人一致请求仲裁庭根据《还款协议》、仲裁申请书及相关证据等制作裁决书结案，裁决书中不写明案件争议事实及理由。
+        </p>
+
+
+        <p class="kongtwo">
+            根据双方当事人的约定及《仲裁规则》的规定，{$d.cjs.zcyInfo.addtime}，由本会主任指定{$d.cjs.zcyInfo.name}为本案独任仲裁员，组成独任仲裁庭审理本案。本会向双方当事人分别送达了组庭通知书和仲裁员声明书。
+        </p>
+
+
+        <div data-edit-title="申请人的仲裁请求" id="5">
+            <p style="display: none" data-yuan="1">
+                申请人的仲裁请求为：
+                {php}
+                    $str = strip_tags($d['info']['request']);
+                    $out = str_replace('&nbsp;',"",$str);
+                    echo $out;
+                {/php}
+            </p>
+
+
+            <p class="kongtwo">
+                申请人的仲裁请求为：
+            </p>
+
+            {$d.info.request}
+
+        </div>
+
+        {if(array_count_values(array_column($d['users']['role'][2],"Is_dabian"))[0])}
+        <p class="kongtwo">
+            {php}$str = "";{/php}
+            {foreach name="$d.users.role.2" item="vo" key="k"}
+            {if($vo.Is_dabian neq 1)}
+            {php} $str .= $vo['Num']."、"; {/php}
+            {/if}
+            {/foreach}
+            {php}$str = mb_substr($str,0,-1);{/php}
+            第{$str}被申请人未提交答辩意见。
+        </p>
+        {/if}
+
+
+
+
+        <!--<p class="" style="margin-left: 31px">-->
+            {foreach name="$d.users.role.2" item="vo"}
+            {if($vo.Is_dabian eq 1)}
+                <p class="kongtwo">第{$vo.Num}被申请人根据申请人提交的仲裁申请书及证据材料，发表如下答辩：{$vo.Dabian}</p><!--<br>-->
+            {/if}
+            {/foreach}
+        <!--</p>-->
+
+
+        <p class="kongtwo">
+            申请人向仲裁庭提交以下证据：
+        </p>
+
+
+        <p class="" style="margin-left: 31px">
+            {$d.test_zhengjulist.sqrall.list}
+        </p>
+
+
+        {if(array_count_values(array_column($d['users']['role'][2],"Is_zhizheng"))[0])}
+        <p class="kongtwo">
+            {php}$str = "";{/php}
+            {foreach name="$d.users.role.2" item="vo" key="k"}
+            {if($vo.Is_zhizheng neq 1)}
+            {php} $str .= $vo['Num']."、"; {/php}
+            {/if}
+            {/foreach}
+            {php}$str = mb_substr($str,0,-1);{/php}
+            第{$str}被申请人未提交质证意见。
+        </p>
+        {/if}
+
+
+        {foreach name="$d.users.role.2" item="vo" key="k"}
+        {if($vo.Is_zhizheng eq 1)}
+        <div data-edit-title="第{$vo.Num}被申请人{$vo.name}的质证意见" id="{$k+100}">
+            <p class="kongtwo">第{$vo.Num}被申请人对申请人提交的证据发表如下质证意见：{$vo.Zhizheng}</p>
+        </div>
+        {/if}
+        {/foreach}
+
+
+        {if(array_count_values(array_column($d['users']['role'][2],"Is_tjzj"))[0])}
+        <p class="kongtwo">
+            {php}$str = "";{/php}
+            {foreach name="$d.users.role.2" item="vo" key="k"}
+            {if($vo.Is_tjzj neq 1)}
+            {php} $str .= $vo['Num']."、"; {/php}
+            {/if}
+            {/foreach}
+            {php}$str = mb_substr($str,0,-1);{/php}
+            第{$str}被申请人未在规定期限内向仲裁庭提交证据。
+        </p>
+        {/if}
+
+
+        {foreach name="$d.users.role.2" item="vo"}
+        {if($vo.Is_tjzj eq 1)}
+        <p class="kongtwo">
+            第{$vo.Num}被申请人向仲裁庭提交了以下证据：{$vo.zhengju.list}
+        </p>
+        {/if}
+        {/foreach}
+
+
+        {if($d.users.role.1.Is_zhizheng eq 1)}
+        <p class="kongtwo">
+            申请人<!--对第一被申请人提交的证据-->发表如下质证意见：{$d.users.role.1.Zhizheng}
+        </p>
+        {/if}
+
+
+        <div data-edit-title="裁决书内容" id="1">
+            <p class="kongtwo"> 经审理申请人的仲裁请求并核实双方提交的证据材料，仲裁庭认为申请人与第一被申请人签订的《借款合同》，与第二被申请人签订的《保证合同》，与第三被申请人签定的《
+                抵押/质押合同》以及与各被申请人签订的《还款协议》均系当事人的真实意思表示，且内容均不违反法律、行政法规的强制性规定，属合法有效。申请人已经按照合同约定履行了放款义务，第一被申请人于 年
+                月未按合同约定履行还款义务，第二、三……被申请人亦未履行担保责任。截至 年 月 日第一被申请人尚欠申请人借款本金 元、利息 元（、罚息 元、复利
+                元），双方当事人应当按照合同约定履行义务，故申请人有权要求第一被申请人按照合同约定偿还欠款并承担违约责任，有权要求第二被申请人承担连带保证责任，亦有权要求第三被申请人承担抵押担保责任/质押担保责任，并就其提供的抵押财产/质押财产依法处分所得价款享有优先受偿权。</p>
+        </div>
+
+        <div data-edit-title="裁决结果" id="2">
+            <p style="display: none" data-yuan="1">
+                依据《中华人民共和国合同法》第八条、第二百零五条、《仲裁规则》第三条、第三十九条、第四十九条、第五十三条、第五十四条、第七十五条、第七十八条、第七十九条、第八十条、第八十一条、第八十二条之规定，仲裁庭裁决如下：
+            （一） ；
+            （二） ；
+            （三）本案仲裁费用 元，由（第一、二……）被申请人承担。
+            上述裁决款，自本裁决书送达之日起15日内由上述被申请人支付给申请人。逾期，加倍支付迟延履行期间的利息。
+            本裁决为终局裁决。
+            </p>
+        <p class="kongtwo">依据《中华人民共和国合同法》第八条、第二百零五条、《仲裁规则》第三条、第三十九条、第四十九条、第五十三条、第五十四条、第七十五条、第七十八条、第七十九条、第八十条、第八十一条、第八十二条之规定，仲裁庭裁决如下：</p>
+
+
+            <p class="kongtwo">
+                （一） ；
+            </p>
+            <p class="kongtwo">
+                （二） ；
+            </p>
+            <p class="kongtwo">
+                （三）本案仲裁费用 元，由（第一、二……）被申请人承担。
+            </p>
+            <p class="kongtwo">
+                上述裁决款，自本裁决书送达之日起15日内由上述被申请人支付给申请人。逾期，加倍支付迟延履行期间的利息。
+            </p>
+            <p class="kongtwo">
+                本裁决为终局裁决。
+            </p>
+        </div>
+    </div>
+
+    <p style="text-align: center">以下无正文</p>
+
+    <div class="clearfix"></div>
+    <div class="xieyi_right_btm">
+        <p class="people" style="margin-right: 80px">仲裁员： &nbsp;&nbsp;<span style="color: #ffffff">{$d.sign.imgs.0}</span></p>
+        <br/><br/><br/><br/><br/><br/>
+        <p class="people" style="margin-right: 80px"><span style="color: #ffffff">{$d.sign.imgs.1}</span></p>
+        <!--<p class="people" style="margin-right: 80px"><span style="color: #ffffff">{$d.uniquevalue.signer_code}</span></p>-->
+        <p></p>
+        <p class="date">{$d.sign.time.string} </p>
+    </div>
+
+
+    
+</div>

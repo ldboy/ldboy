@@ -1,0 +1,30 @@
+<div class="xywrap">
+    <div class="title1">管辖权异议申请书</div>
+    <div class="main_info margintop">
+        {if condition="$d['users']['me']['id_type'] == 1"}
+        <p class="box"><span><span>异 议 人</span>：</span><span>{$d.users.me.name}  {$d.users.me.sex}  {$d.users.me.nation}  {$d.users.me.birthday} {$d.users.me.address}</span></p>
+        {elseif condition="$d['users']['me']['id_type'] == 2" /}
+        <p class="box"><span><span>异 议 人</span>：</span><span>{$d.users.me.name}</span></p>
+        <p class="box"><span><span>法定代表人</span>：</span>{$d.users.me.f_name}</p>
+        {/if}
+    </div>
+    <div class="mydiv">
+        <div class="content con">
+            <div class="newtitle">请求事项</div>
+            <p>{$d.dvalue.this.uniquevalue.gxq_matter}</p>
+            <div class="newtitle">事实与理由</div>
+            <p>{$d.dvalue.this.uniquevalue.gxq_reason}</p>
+        </div>
+        <div class="xeiyibtm1 clearfix con">
+            <p class="kongtwo">此致</p>
+            <p>{$d.jigou.info.name}</p>
+        </div>
+        <div class="clearfix"></div>
+        <div class="signbtm">
+            <!--<span style="color:#ffffff;margin-left:15px;">{$d.sign.imgs.0}</span>-->
+            <div class="sign1">异议人（代理人）：<span style="color:#ffffff;margin-left:5px;">{$d.uniquevalue.signer_code}</span></div>
+            <div class="tt">{$d.sign.time.string}</div>
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+</div>

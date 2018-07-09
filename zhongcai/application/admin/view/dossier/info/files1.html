@@ -1,0 +1,63 @@
+        <tr class="{$class}" style="border-bottom: 1px">
+            <th colspan="2" ><span   style="color: #3c8dbc">->{$title}</span> <span class="bg-warning margin" style="font-size: smaller">{$tip}</span></th>
+
+                <th colspan="1" style="text-align: right"></th>
+
+            </tr>
+            {volist name="sqfiles" id="vo"}
+
+        {if condition="$vo.file_type==2"}
+        <tr class="active">
+
+            <td colspan="4" class="warning active">-----以下为证据-----</td>
+
+
+        </tr>
+        {/if}
+
+            <tr>
+             
+                <td style="width: 30%">{$vo.name}</td>
+
+                {if condition="$showlaiyuan"}
+                <td>{$vo.u_name}</td>
+                {/if}
+                <td>{$vo.desc}</td>
+                <td>
+                    <?php if($vo['show_look']==1):?>
+                    <a href="{:url('admin/wsdoc.show/index', 'view_pdf=1&docid='.$vo.id, '')}"
+                       class="btn btn-info btn-xs btn-detail btn-dialog" title="{$vo.name}"
+                     ><i class="fa fa-list"></i>
+                        查看</a>
+                    <?php endif;?>
+
+
+                    <?php if($vo['show_fj']==1):?>
+                    <a href="{:url('admin/wsdoc.img/index', 'edit=0&docid='.$vo.id, '')}"
+                       class="btn btn-info btn-xs btn-detail btn-dialog bg-purple" title="{$vo.name}"
+                       data-table-id="table"
+                       data-row-index="0" data-button-index="0"><i class="fa fa-list"></i>
+                        查看</a>
+                    <?php endif;?>
+
+                    
+                    <?php if($vo['show_fj']==2):?>
+                    <a href="{:url('admin/wsdoc.img/index', 'edit=1&docid='.$vo.id, '')}"
+                       class="btn btn-warning btn-xs btn-detail btn-dialog" title="{$vo.name}"
+                       data-table-id="table"
+                       data-row-index="0" data-button-index="0"><i class="fa fa-mouse-pointer"></i>
+                        <?php if($vo['file_type']==1):?>查看证据<?php else:?>查看<?php endif;?></a>
+                    <?php endif;?>
+
+                </td>
+
+            </tr>
+
+        {if condition="$vo.file_type==1"}
+        <tr>
+
+            <td  colspan="{if condition="$showlaiyuan"}4{else}3{/if}" style="padding-left:30px;">{$vo.zhengming_shixiang}</td>
+        </tr>
+        {/if}
+
+            {/volist}

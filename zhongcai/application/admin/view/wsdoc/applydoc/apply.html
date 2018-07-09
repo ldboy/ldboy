@@ -1,0 +1,231 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="{:url('dossier.cp/add')}">
+
+    <input type="hidden" value="{$dossier_id}" name="row[dossier_id]">
+
+
+<div class="layui-layer-title"  style="width:100%">请填写资料</div>
+ <div class="panel panel-default panel-intro panel-body">
+    <div class="form-group">
+        <label for="c-zctitle" class="control-label col-xs-12 col-sm-2">仲裁标题:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-zctitle5af265894201e9065" data-rule="required" class="form-control" name="row[zctitle]" type="text" value="{$row.zctitle}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-zhongcai" class="control-label col-xs-12 col-sm-2">仲裁机构:</label>
+        <div class="col-xs-12 col-sm-8">
+                        
+            <select  id="c-zhongcai" class="form-control selectpicker" name="row[zhongcai]">
+                {foreach name="$zhongcailist" item="vo"}
+                    <option value="{$key}" {in name="key" value="$row.zhongcai"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-request" class="control-label col-xs-12 col-sm-2">请求事项:</label><!--<a class="btn-dialog" href="{:url('wsdoc.docmodel/index',['moban'=>1])}">查看样例</a>-->
+        <div class="col-xs-12 col-sm-8">
+            <span style="color: red">请求事项模板只为参考，请以实际仲裁请求为准</span>
+            <textarea id="c-request" data-rule="required" class="form-control " rows="10" name="row[request]" cols="50">{$row.request}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-reasons" class="control-label col-xs-12 col-sm-2">事实和理由:</label><!--<a class="btn-dialog" href="{:url('wsdoc.docmodel/index',['moban'=>2])}">查看样例</a>-->
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-reasons" data-rule="required" class="form-control " rows="10" name="row[reasons]" cols="50">{$row.reasons}</textarea>
+        </div>
+    </div>
+     <!--<div class="form-group">-->
+         <!--<label for="c-dispute_money" class="control-label col-xs-12 col-sm-2">请输入争议金额：（单位：元）</label>-->
+         <!--<div class="col-xs-12 col-sm-8">-->
+             <!--<input id="c-dispute_money" data-rule="required" class="form-control"  name="row[dispute_money]" type="text" value="{$row.dispute_money}">-->
+         <!--</div>-->
+     <!--</div>-->
+</div>
+
+
+
+
+
+
+ <div class="layui-layer-title" >被申请人信息</div>
+
+ <div class="panel panel-default panel-intro panel-body" >
+
+ <div>
+
+<?php for($__index=0;$__index<$bsqr_num ;$__index++) {  ?>
+
+ <fieldset disabled>
+ <div style="border: #d0d0d0 1px solid;">
+    <div class="form-group">
+        <label for="c-bsqr_name" class="control-label col-xs-12 col-sm-2">被申请人(公司/个人)名称:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-bsqr_name5af26589424c94508" data-rule="required" class="form-control"  name="row[bsqr_num][bsqr_name][]" type="text" value="{$row.bsqr_num.bsqr_name[$__index]}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-bsqr_credit_code" class="control-label col-xs-12 col-sm-2">统一社会信用代码(个人填：<span style="color: red">无</span>):</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-bsqr_credit_code5af26589425db7339" class="form-control"  name="row[bsqr_num][bsqr_credit_code][]" type="text" value="{$row.bsqr_num.bsqr_credit_code[$__index]}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-bsqr_f_name" class="control-label col-xs-12 col-sm-2">法定代表人(个人填：<span style="color: red">无</span>):</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-bsqr_f_name5af26589426da4549" class="form-control"  name="row[bsqr_num][bsqr_f_name][]" type="text" value="{$row.bsqr_num.bsqr_f_name[$__index]}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-bsqr_com_phone" class="control-label col-xs-12 col-sm-2">联系方式(公司)(个人填：<span style="color: red">无</span>):</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-bsqr_com_phone5af26589427e32106" class="form-control" name="row[bsqr_num][bsqr_com_phone][]"  type="text" value="{$row.bsqr_num.bsqr_com_phone[$__index]}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-bsqr_idcard" class="control-label col-xs-12 col-sm-2">身份证号:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-bsqr_idcard5af26589428b14691" class="form-control" name="row[bsqr_num][bsqr_idcard][]"  type="text" value="{$row.bsqr_num.bsqr_idcard[$__index]}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-bsqr_phone" class="control-label col-xs-12 col-sm-2">手机号:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-bsqr_phone5af26589429be5524" class="form-control" name="row[bsqr_num][bsqr_phone][]"  type="text" value="{$row.bsqr_num.bsqr_phone[$__index]}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-bsqr_address" class="control-label col-xs-12 col-sm-2">地址(公司住所/个人住址):</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-bsqr_address5af2658942abf9184" class="form-control" name="row[bsqr_num][bsqr_address][]"  type="text" value="{$row.bsqr_num.bsqr_address[$__index]}">
+        </div>
+    </div>
+ </div>
+ </fieldset>
+
+
+<?php } ?>
+
+</div>
+{if condition="($is_zc != 1)"}
+    <div class="form-group panel-body"><label class="control-label col-xs-12 col-sm-2"></label><a href="javascript:;"    class="btn btn-sm btn-success btn-append wsbtnmore"><i class="fa fa-plus"></i> 增加</a></div>
+{/if}
+
+ <div style="display:none">
+ <div>
+     <fieldset disabled>
+     <div class="form-group">
+        <label for="c-bsqr_name" class="control-label col-xs-12 col-sm-2">被申请人(公司/个人)名称:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-bsqr_name5af26589424c94508" data-rule="required" class="form-control"  name="row[bsqr_num][bsqr_name][]" type="text" value="例：***有限公司/周**">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-bsqr_credit_code" class="control-label col-xs-12 col-sm-2">统一社会信用代码(个人填：<span style="color: red">无</span>):</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-bsqr_credit_code5af26589425db7339" class="form-control" name="row[bsqr_num][bsqr_credit_code][]"  type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-bsqr_f_name" class="control-label col-xs-12 col-sm-2">法定代表人(个人填：<span style="color: red">无</span>):</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-bsqr_f_name5af26589426da4549" class="form-control" name="row[bsqr_num][bsqr_f_name][]"  type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-bsqr_com_phone" class="control-label col-xs-12 col-sm-2">联系方式(公司)(个人填：<span style="color: red">无</span>):</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-bsqr_com_phone5af26589427e32106" class="form-control" name="row[bsqr_num][bsqr_com_phone][]"  type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-bsqr_idcard" class="control-label col-xs-12 col-sm-2">身份证号:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-bsqr_idcard5af26589428b14691" class="form-control" name="row[bsqr_num][bsqr_idcard][]"  type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-bsqr_phone" class="control-label col-xs-12 col-sm-2">手机号:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-bsqr_phone5af26589429be5524" class="form-control" name="row[bsqr_num][bsqr_phone][]"  type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-bsqr_address" class="control-label col-xs-12 col-sm-2">地址(公司住所/个人住址):</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-bsqr_address5af2658942abf9184" class="form-control" name="row[bsqr_num][bsqr_address][]"  type="text" value="">
+        </div>
+    </div>
+     </fieldset>
+ </div>
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="layui-layer-title"  style="width:100%">申请人详情</div>
+ <div class="panel panel-default panel-intro panel-body">
+     <fieldset disabled>
+    <div class="form-group">
+        <label for="c-sqr_name" class="control-label col-xs-12 col-sm-2">申请人(公司/个人)名称:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-sqr_name5af2658942c321158" data-rule="required" class="form-control" name="row[sqr_name]"  type="text" value="{$row.sqr_name}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-sqr_credit_code" class="control-label col-xs-12 col-sm-2">统一社会信用代码(个人填：<span style="color: red">无</span>):</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-sqr_credit_code5af2658942d3d5756" class="form-control" name="row[sqr_credit_code]" type="text"   value="{$row.sqr_credit_code}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-sqr_f_name" class="control-label col-xs-12 col-sm-2">法定代表人(个人填：<span style="color: red">无</span>):</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-sqr_f_name5af2658942e3a4262" class="form-control" name="row[sqr_f_name]" type="text"  value="{$row.sqr_f_name}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-sqr_com_phone" class="control-label col-xs-12 col-sm-2">联系方式(公司):</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-sqr_com_phone5af2658942f28519" class="form-control" name="row[sqr_com_phone]" type="text"  value="{$row.sqr_com_phone}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-sqr_idcard" class="control-label col-xs-12 col-sm-2">身份证号:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-sqr_idcard5af265894302e2418" class="form-control" name="row[sqr_idcard]" type="text"  value="{$row.sqr_idcard}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-sqr_phone" class="control-label col-xs-12 col-sm-2">手机号:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-sqr_phone5af265894312f4241" class="form-control" name="row[sqr_phone]" type="text"  value="{$row.sqr_phone}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-sqr_address" class="control-label col-xs-12 col-sm-2">住所:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-sqr_address5af265894321b699" class="form-control" name="row[sqr_address]" type="text"  value="{$row.sqr_address}">
+        </div>
+    </div>
+    </fieldset>
+</div>
+
+
+
+    <div>
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed btn-submit-tip" data-tip="确定要提交吗？请仔细核实表单信息，此操作不可逆！" data-title="提示">下一步</button>
+          
+        </div>
+    </div>
+
+
+</form>
+

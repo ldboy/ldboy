@@ -1,0 +1,16 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label for="c-refuse_value" class="control-label col-xs-12 col-sm-2">请填写拒绝原因:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-refuse_value" data-rule="required" class="form-control " rows="5" name="row[refuse_value]" cols="50">{$row.refuse_value}</textarea>
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed btn-warning-tip" data-title='提示' data-tip='确定要拒绝吗？'>{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

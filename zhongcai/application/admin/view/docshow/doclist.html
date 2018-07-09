@@ -1,0 +1,7 @@
+<div>
+    <?php foreach($list as $k=>$v):?>
+    <div>
+    <?php echo $v['name'];?>:<a href="{:url('docshow/docshow','ids='.$v['id'])}">编辑</a><a>签字</a><a>上传</a>
+    </div>
+    <?php endforeach;?>
+</div>

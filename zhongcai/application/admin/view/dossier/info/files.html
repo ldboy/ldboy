@@ -1,0 +1,99 @@
+<div class="box {$class}">
+    <div class="box-header">
+        <h3 class="box-title">{$title}</h3>
+        <div class="box-tools pull-right">
+            <span>{$tip}</span>
+
+        </div>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body table-responsive">
+        <table class="table table-hover col-xs-1">
+            <tbody>
+            <tr>
+                <th>材料名称</th>
+                <th>来源</th>
+                <th>备注</th>
+
+                <th>查看</th>
+
+            </tr>
+            {volist name="sqfiles" id="vo"}
+            <tr>
+
+                <td>{$vo.name}</td>
+
+                <td>{$vo.u_name}</td>
+                <td>{$vo.desc}</td>
+                <td>
+                    <?php if($vo['show_look']==1):?>
+                    {if $is_phone}
+                    <a target="_blank" href="{:url('admin/wsdoc.show/index', 'is_phone='.$is_phone.'&view_pdf=1&docid='.$vo.id, '')}"
+                       class="btn btn-info btn-xs " title="{$vo.name}"
+                     ><i class="fa fa-list"></i>
+                        查看</a>
+                    {else}
+                    <a href="{:url('admin/wsdoc.show/index', 'is_phone='.$is_phone.'&view_pdf=1&docid='.$vo.id, '')}"
+                       class="btn btn-info btn-xs btn-detail btn-dialog" title="{$vo.name}"
+                    ><i class="fa fa-list"></i>
+                        查看</a>
+                    {/if}
+                    <?php endif;?>
+
+
+                    <?php if($vo['show_fj']==1):?>
+                    {if $is_phone}
+                    <a target="_blank" href="{:url('admin/wsdoc.img/index', 'is_phone='.$is_phone.'&edit=0&docid='.$vo.id, '')}"
+                       class="btn btn-info btn-xs bg-purple" title="{$vo.name}"
+                       data-table-id="table"
+                       data-row-index="0" data-button-index="0"><i class="fa fa-list"></i>
+                        查看</a>
+                    {else}
+
+                    <a href="{:url('admin/wsdoc.img/index', 'is_phone='.$is_phone.'&edit=0&docid='.$vo.id, '')}"
+                       class="btn btn-info btn-xs btn-detail btn-dialog bg-purple" title="{$vo.name}"
+                       data-table-id="table"
+                       data-row-index="0" data-button-index="0"><i class="fa fa-list"></i>
+                        查看</a>
+                    {/if}
+                    <?php endif;?>
+
+                    
+                    <?php if($vo['show_fj']==2):?>
+                    {if $is_phone }
+                    <a target="_blank" href="{:url('admin/wsdoc.img/index', 'is_phone='.$is_phone.'&edit=1&docid='.$vo.id, '')}"
+                       class="btn btn-warning btn-xs " title="{$vo.name}"
+                       data-table-id="table"
+                       data-row-index="0" data-button-index="0"><i class="fa fa-mouse-pointer"></i>
+                        查看证据</a>
+                    {else}
+                    <a href="{:url('admin/wsdoc.img/index', 'is_phone='.$is_phone.'&edit=1&docid='.$vo.id, '')}"
+                       class="btn btn-warning btn-xs btn-detail btn-dialog" title="{$vo.name}"
+                       data-table-id="table"
+                       data-row-index="0" data-button-index="0"><i class="fa fa-mouse-pointer"></i>
+                        查看证据</a>
+                    {/if}
+                    <?php endif;?>
+
+                </td>
+
+            </tr>
+
+
+
+            {if condition="$vo.file_type==1"}
+            <tr>
+
+                <td  colspan="4" style="padding-left:30px;">{$vo.zhengming_shixiang}</td>
+            </tr>
+            {/if}
+            {/volist}
+
+            </tbody>
+        </table>
+
+
+    </div>
+
+    <!-- /.box-body -->
+</div>

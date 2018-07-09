@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box box-success">
+            <div class="box-header">
+                <h3 class="box-title">受理页面</h3>
+
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive">
+                <table class="table table-hover">
+                    <tbody>
+                    <tr>
+                        <th>文件ID</th>
+                        <th>文件名称</th>
+
+                        <th>操作</th>
+
+                    </tr>
+                    {volist name="list" id="vo"}
+                    <tr>
+                        <td>{$vo.doc_type}</td>
+                        <td>{$vo.name}</td>
+                        <td>
+                            <a href="{$vo.view}?dossier_id={$dossier_id}"
+                               class="btn btn-info btn-xs btn-detail btn-dialog" title="查看" data-table-id="table"
+                               data-row-index="0" data-button-index="0"><i class="fa fa-list"></i>
+                                查看</a>
+                             </td>
+
+
+                    </tr>
+                    {/volist}
+
+                    </tbody>
+                </table>
+
+
+            </div>
+
+            <!-- /.box-body -->
+        </div>
+
+        <!-- /.box -->
+        <div  >
+            <label class="control-label col-xs-12 col-sm-2"></label>
+            <div class="col-xs-12 col-sm-8">
+                <a  href="{:url('dossier.Dossieroperation/accept','dossier_id='.$dossier_id,'')}" class="btn btn-success btn-embossed">{:__('Acceptance')}</a>
+                <button type="reset" class="btn btn-default btn-embossed">{:__('NO Acceptance')}</button>
+            </div>
+        </div>
+    </div>
+</div>
+

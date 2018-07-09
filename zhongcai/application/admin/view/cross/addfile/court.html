@@ -1,0 +1,118 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="" name="addForm">
+    <h3>请选择仲裁员</h3>
+    <style>
+        .btn {
+            display: none;
+        }
+
+        .label {
+            display: block;
+            width: 50px;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 3px;
+            background: mediumblue;
+            color: #fff;
+            font-size: 14px;
+            padding: 0;
+        }
+    </style>
+
+    {if condition="$_GET['again']"}
+    <div class="form-group">
+        <label for="c-name" class="control-label col-xs-12 col-sm-2">重新指定原因:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea name="row[reason]" class="form-control " rows="5" required="required" cols="50"
+                      id="area"></textarea>
+
+        </div>
+    </div>
+
+    {/if}
+
+    {volist name="zcyList" id="vo" }
+
+    <div class="col-sm-4 col-md-3" style="width: 200px; ">
+
+        <div class="thumbnail example">
+            <?php if($vo['remind_show']):?><span class="btn btn-success">编号：{$vo['id']}</span><?php else:?><span
+                class="btn btn-info">编号：{$vo['id']}</span><?php endif;?>
+
+            <img style=" display: block;max-width: 100%; height: 160px;" <?php if($vo['show']):?>
+            src="{$vo['show']}" <?php else:?>
+            src="https://ws2.sinaimg.cn/large/006tNc79gy1fgphwt8nq8j30e609f3z4.jpg" <?php endif;?>  alt="头像">
+            <div class="caption">
+                <h4>仲裁员姓名：{$vo['name']}</h4>
+                <p class="text-muted">仲裁案件总量：{$vo['total']}</p>
+                <p class="text-muted">已完成案件数量：{$vo['finish_num']}</p>
+                <p class="text-muted">地区：{$vo['province_name']}{$vo['city_name']}{$vo['district_name']}</p>
+                <p>
+                    <!--<a class="btn btn-primary btn-success btn-detail" data-id="6210" onclick="tijiao('{$vo.id}')" href="{url('cross.addfile/court')}"><i class="fa fa-gavel"></i>-->
+                    <!--编号:{$vo['id']}--></a>
+                    <span class="pull-right" style="margin-top:10px; float: none!important;">
+                
+                    <!--如果需要多选操作，请确保有下面的checkbox元素存在,可移除-->
+                     <label class="label" for="{$vo['id']}">指定<input style="display: none;"
+                                                                     class="btn btn-primary btn-success btn-detail"
+                                                                     id="{$vo['id']}" name="row[name]"
+                                                                     value="{$vo['id']}" data-id="6211" type="radio"
+                                                                     onclick="tijiao('{$vo.id}','{$_GET[\'again\']}')"/></label>
+            </span>
+                </p>
+            </div>
+        </div>
+    </div>
+    {/volist}
+
+    <div style="clear: both"></div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8" style="display: none">
+            <button type="submit" id="submit_btn" class="btn btn-success btn-embossed">提交</button>
+        </div>
+    </div>
+</form>
+
+<script>
+    function trigger(id) {
+//IE
+        if (document.all) {
+            document.getElementById(id).click();
+        }
+// 其它浏览器
+        else {
+            var e = document.createEvent("MouseEvents");
+            e.initEvent("click", true, true);　　　　　　　　　　　　　　//这里的click可以换成你想触发的行为
+            document.getElementById(id).dispatchEvent(e);　　　//这里的clickME可以换成你想触发行为的DOM结点
+        }
+    }
+    function tijiao(id, isa) {
+        if (isa) {
+            var area = document.getElementById("area").value;
+            if (!area) {
+                alert("请填写重新指定原因");
+                return false;
+            }
+
+        }
+        Layer.confirm(
+            "<div style='font-size: xx-large'>" + (  "确定要提交吗?") + "</div>",
+            {icon: 3, title: "提示", shadeClose: true, area: [300, 300]},
+            function (index) {
+
+
+
+
+                
+                Layer.closeAll();
+                if (index) {
+                    // document.addForm.submit();
+                    trigger("submit_btn")
+
+                }
+            });
+
+    }
+</script>
+{$page}

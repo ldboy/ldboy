@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>案件材料</title>
+    <style>
+        .quit_btn1{
+
+            border:1px solid green;
+            border-radius:5px;
+            color: #000000;
+            font-size: 15px;
+            padding:0 10px;
+            display: block;
+            text-align: center;
+            line-height:38px;
+            margin:8px auto 4px;
+
+        }
+        .current_location_zhz  { font-size: 18px;color: #3c8dbc; padding:0 4% ; width: 94%; height: 40px; line-height: 40px;}
+        .mall_main .address_list .list_left{
+            border: none;
+        }
+        .mall_main .address_list{
+            padding: 3% 3% 3%;
+        }
+        .mall_main  .pw2 em{
+            float: right;
+            font-style: normal;
+        }
+        .mall_main .address_list .list_left .pw2{
+            width: 100%
+        }
+        .mall_main .address_list{
+            box-shadow: none;   float: none; 
+
+        }
+
+    </style>
+    <link rel="stylesheet" href="__CDN__/assets/css/wechat/mall.css" type="text/css" />
+</head>
+<body>
+
+<div class="mall_main">
+    <div id="child_header">
+        <div class="goback"><a href="javascript:history.back(-1)"><i></i></a></div>
+        <div class="current_location"><span>案件材料</span></div>
+    </div>
+    {foreach name="filehtml" item="volue"}
+        <div class="current_location_zhz">{$key}</div>
+        {foreach name="volue" item="vo"}
+        <div class="address_list clearfix">
+            <div class="list_left clearfix">
+                <div class="pw2">
+                    <p ><b>材料名称<em>{$vo.name}</em></b></p>
+                    <p >提交人<em>{$vo.u_name}</em></p>
+                    <p>备注<em>{$vo.desc}</em></p>
+                    <p>{$vo.zhengming_shixiang}</p>
+
+                </div>
+            </div>
+        </div>
+        {/foreach}
+    {/foreach}
+    <span  style="color: green; display:block; line-height: 40px; height: 40px; margin: 0 auto; text-align: center">----以上是所有案件材料----</span>
+</div>
+
+<script>
+    function zhiding(url){
+        var tmp =window.confirm('确定要提交吗');
+        if(tmp == true){
+            window.location.href=url;
+        }
+
+    }
+</script>
+</body>
+</html>

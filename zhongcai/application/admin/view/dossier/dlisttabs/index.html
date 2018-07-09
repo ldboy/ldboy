@@ -1,0 +1,102 @@
+<div class="panel panel-default panel-intro">
+    <div class="panel-heading">
+        {:build_heading(null,FALSE)}
+
+        <ul class="nav nav-tabs" style="font-size: larger">
+
+
+            {foreach name="$tabs" item="vo"}
+
+            {if condition="$vo.nodes"}
+            <li class="dropdown  {if $type eq $vo.tag}active{/if}">
+
+                <a href="#{$vo.tag}" class="dropdown-toggle " data-toggle="dropdown">
+                    {$vo.name}{if condition="$vo.tip_type==0"}[{$vo.num}]{else}
+                    <span class="badge pull-right badge-success bg-{$vo.bage_color}">{$vo.num}</span>
+                    {/if}
+
+                    <b class="caret"></b>
+
+                </a>
+                <ul class="dropdown-menu">
+
+                    {foreach name="$vo.nodes" item="val"}
+                    <li><a href="#{$val.tag}" data-toggle="tab">{$val.name}{if condition="$val.tip_type==0"}[{$val.num}]{else}<span class="badge pull-right badge-success bg-{$val.bage_color}">{$val.num}</span>
+                        {/if}
+                    </a></li>
+
+                    {/foreach}
+                </ul>
+
+            </li>
+            {else}
+            <li class="{if $type eq $vo.tag}active{/if}">
+                <a href="#{$vo.tag}" data-toggle="tab">{$vo.name}{if condition="$vo.tip_type==0"}[{$vo.num}]{else}
+                    <span class="badge pull-right badge-success bg-{$vo.bage_color}">{$vo.num}</span>
+                    {/if}
+                </a></li>
+
+            {/if}
+
+
+            {/foreach}
+
+
+        </ul>
+
+
+    </div>
+    <div class="panel-body" style="font-size: larger">
+        <div class="bootstrap-table">
+            <div class="commonsearch-table">
+                <form id="kuaijiesousuo" class="form-horizontal form-commonsearch nice-validator n-default n-bootstrap"
+                      novalidate="" method="post" action="">
+                    <fieldset>
+                        <div class="row">
+
+
+                            <div class="form-group col-xs-8 ">
+                                <label class="control-label col-xs-4">快捷搜索</label>
+                                <div class="col-xs-8">
+
+                                    <input type="text" class="form-control" name="sq_phone" value=""
+                                           placeholder="ID、受理号、手机号、身份证号、申请人姓名" id="sq_phone" data-index="1">
+                                </div>
+                            </div>
+
+                            <div class="form-group col-xs-4">
+                                <div class="col-sm-12">
+                                    <button type="submit" class="btn btn-success" formnovalidate="">搜索</button>
+                                    <button type="reset" class="btn btn-default">重置</button>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+
+        </div>
+
+        <div id="myTabContent" class="tab-content ">
+            <div class="tab-pane fade active in" id="one">
+                <div class="widget-body no-padding">
+
+
+                    <div id="toolbar" class="toolbar">
+                        <a href="javascript:;" class="btn btn-primary btn-refresh " title="刷新"><i
+                                class="fa fa-refresh"></i> </a>
+
+                    </div>
+                    <table id="table" class="table table-striped table-bordered table-hover"
+
+                           width="100%">
+
+
+
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

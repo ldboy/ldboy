@@ -1,0 +1,28 @@
+<div class="box box-info">
+    <div class="box-header">
+        <h3 class="box-title">案件材料</h3>
+        <div class="box-tools pull-right">
+            <span>{$tip}</span>
+
+        </div>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body table-responsive">
+        <table class="table table-hover">
+            <tbody>
+            <tr class="active">
+
+                <th>材料名称</th>
+                {if condition="$showlaiyuan"}
+                <th>提交人</th>
+                {/if}
+                <th>备注</th>
+
+                <th>查看</th>
+
+            </tr>
+            {$html}
+            </tbody>
+        </table>
+    </div>
+</div>
